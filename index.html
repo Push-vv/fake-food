@@ -484,6 +484,7 @@
   <button class="filter-btn" data-sort="rating" onclick="setSort(this, 'rating')">评分最高</button>
   <button class="filter-btn" data-sort="sales" onclick="setSort(this, 'sales')">销量优先</button>
   <button class="filter-btn" data-sort="price" onclick="setSort(this, 'price')">价格最低</button>
+  <button class="filter-btn" data-sort="popular" onclick="setSort(this, 'popular')">🔥 我的最爱</button>
 </div>
 
 <div class="restaurants-list" id="restaurantsList"></div>
@@ -567,7 +568,7 @@
 </div>
 
 <div class="toast" id="toast"></div>
-<div style="text-align:center;padding:20px 0 160px;font-size:11px;color:#ccc;">v1.2 · 假装点外卖 · 不花钱不长胖</div>
+<div style="text-align:center;padding:20px 0 160px;font-size:11px;color:#ccc;">v1.3 · 假装点外卖 · 不花钱不长胖</div>
 
 <script>
 let currentCategory = '全部';
@@ -677,8 +678,30 @@ function getFilteredRestaurants() {
       const pb = Math.min(...b.dishes.map(d => d.price));
       return pa - pb;
     });
+  } else if (currentSort === 'popular') {
+    const clicks = getClickData();
+    list = [...list].sort((a, b) => {
+      const ca = a.dishes.reduce((s, d) => s + (clicks[a.id + '-' + d.name] || 0), 0);
+      const cb = b.dishes.reduce((s, d) => s + (clicks[b.id + '-' + d.name] || 0), 0);
+      return cb - ca;
+    });
   }
   return list;
+}
+
+// ==================== 点击热度追踪 ====================
+function getClickData() {
+  try {
+    return JSON.parse(localStorage.getItem('foodClicks') || '{}');
+  } catch(e) { return {}; }
+}
+function recordClick(restaurantId, dishName) {
+  try {
+    const data = getClickData();
+    const key = restaurantId + '-' + dishName;
+    data[key] = (data[key] || 0) + 1;
+    localStorage.setItem('foodClicks', JSON.stringify(data));
+  } catch(e) {}
 }
 
 function renderRestaurants() {
@@ -821,7 +844,7 @@ function updateCart(restaurantId, dishName, delta, event) {
   if (!cart[key]) cart[key] = { restaurantId, dish, qty: 0 };
   cart[key].qty += delta;
   if (cart[key].qty <= 0) delete cart[key];
-  if (delta > 0 && event) flyAnimation(event.target, dish.emoji);
+  if (delta > 0) { recordClick(restaurantId, dishName); if (event) flyAnimation(event.target, dish.emoji); }
   updateCartUI();
   if (expandedRestaurant == restaurantId) renderRestaurants();
   showToast(delta > 0 ? `已添加 ${dish.emoji} ${dish.name}` : `已移除 ${dish.name}`);
