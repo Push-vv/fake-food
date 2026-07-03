@@ -565,10 +565,31 @@
     <div class="success-row total"><span class="label">实付金额</span><span class="value price" id="successTotal">¥0</span></div>
   </div>
   <button class="success-btn" onclick="resetApp()">再来一单</button>
+  <button class="success-btn" style="background:#4CAF50;margin-top:8px;" onclick="generateShareCard()">📸 生成分享卡片</button>
+  <div id="shareCardArea" style="display:none;padding:16px 0;"></div>
+  <button id="shareCardClose" style="display:none;margin-top:8px;padding:8px 24px;background:var(--bg);border:none;border-radius:16px;font-size:13px;color:var(--text-lighter);cursor:pointer;" onclick="closeShareCard()">收起卡片</button>
+</div>
+
+<!-- 统计弹窗 -->
+<div class="success-overlay" id="statsOverlay" style="overflow-y:auto;">
+  <div style="padding:40px 20px 100px;max-width:400px;margin:0 auto;">
+    <div class="success-title" style="margin-bottom:20px;">👤 我的数据</div>
+    <div id="statsBody"></div>
+    <button class="success-btn" style="margin-top:16px;" onclick="document.getElementById('statsOverlay').classList.remove('show');switchTab('home');">返回首页</button>
+  </div>
+</div>
+
+<!-- 历史订单弹窗 -->
+<div class="success-overlay" id="historyOverlay" style="overflow-y:auto;">
+  <div style="padding:40px 20px 100px;max-width:400px;margin:0 auto;">
+    <div class="success-title" style="margin-bottom:20px;">📋 历史订单</div>
+    <div id="historyBody"></div>
+    <button class="success-btn" style="margin-top:16px;" onclick="document.getElementById('historyOverlay').classList.remove('show');switchTab('home');">返回首页</button>
+  </div>
 </div>
 
 <div class="toast" id="toast"></div>
-<div style="text-align:center;padding:20px 0 160px;font-size:11px;color:#ccc;">v1.6 · 假装点外卖 · 不花钱不长胖</div>
+<div style="text-align:center;padding:20px 0 160px;font-size:11px;color:#ccc;">v2.1 · 假装点外卖 · 不花钱不长胖</div>
 
 <script>
 let currentCategory = '全部';
@@ -592,13 +613,117 @@ function switchTab(tab) {
   activeTab = tab;
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
   document.querySelector(`.nav-tab[data-tab="${tab}"]`).classList.add('active');
-  if (tab !== 'home') {
-    showToast('功能开发中，敬请期待');
-    setTimeout(() => {
-      activeTab = 'home';
-      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-      document.querySelector('.nav-tab[data-tab="home"]').classList.add('active');
-    }, 800);
+  if (tab === 'orders') {
+    showOrderHistory();
+  } else if (tab === 'messages') {
+    showToast('💬 暂无新消息~');
+    document.querySelector('.nav-tab[data-tab="home"]').classList.add('active');
+    document.querySelector('.nav-tab[data-tab="messages"]').classList.remove('active');
+  } else if (tab === 'profile') {
+    showStats();
+  } else {
+    // home
+    document.getElementById('statsOverlay').classList.remove('show');
+    document.getElementById('historyOverlay').classList.remove('show');
+  }
+}
+
+// ==================== 订单存储 ====================
+function getOrderHistory() {
+  try { return JSON.parse(localStorage.getItem('foodOrders') || '[]'); }
+  catch(e) { return []; }
+}
+function saveOrder(order) {
+  try {
+    const orders = getOrderHistory();
+    orders.unshift(order);
+    if (orders.length > 50) orders.length = 50; // 最多存50条
+    localStorage.setItem('foodOrders', JSON.stringify(orders));
+  } catch(e) {}
+}
+// 当前订单暂存（结算时保存，完成页使用）
+let currentOrder = null;
+
+function showOrderHistory() {
+  const overlay = document.getElementById('historyOverlay');
+  const body = document.getElementById('historyBody');
+  const orders = getOrderHistory();
+  if (orders.length === 0) {
+    body.innerHTML = '<div class="empty-state"><div class="emoji">📋</div><p>还没有订单，快去点一单吧~</p></div>';
+  } else {
+    body.innerHTML = orders.map((o, i) => `
+      <div style="background:white;border-radius:12px;padding:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+          <span style="font-weight:700;font-size:14px;">🧾 ${o.restaurant}</span>
+          <span style="color:var(--primary);font-weight:700;">¥${o.total.toFixed(1)}</span>
+        </div>
+        <div style="font-size:12px;color:var(--text-lighter);margin-bottom:4px;">${o.items.map(it => it.name).join('、')}</div>
+        <div style="font-size:11px;color:var(--text-lighter);">${o.time}</div>
+      </div>
+    `).join('');
+  }
+  overlay.classList.add('show');
+}
+
+function showStats() {
+  const overlay = document.getElementById('statsOverlay');
+  const orders = getOrderHistory();
+  const now = new Date();
+  const thisMonth = now.getFullYear() + '-' + (now.getMonth()+1);
+  const monthOrders = orders.filter(o => o.month === thisMonth);
+  const monthTotal = monthOrders.reduce((s, o) => s + o.total, 0);
+  const monthCount = monthOrders.length;
+  // 最爱餐厅
+  const restaurantCount = {};
+  orders.forEach(o => { restaurantCount[o.restaurant] = (restaurantCount[o.restaurant]||0)+1; });
+  const favRestaurant = Object.entries(restaurantCount).sort((a,b)=>b[1]-a[1])[0];
+  // 最爱菜品
+  const clicks = getClickData();
+  const favDish = Object.entries(clicks).sort((a,b)=>b[1]-a[1])[0];
+
+  const body = document.getElementById('statsBody');
+  body.innerHTML = `
+    <div style="background:linear-gradient(135deg,#FFF3E0,#FFE0B2);border-radius:16px;padding:24px;text-align:center;margin-bottom:16px;">
+      <div style="font-size:48px;margin-bottom:8px;">📊</div>
+      <div style="font-size:13px;color:var(--text-lighter);">本月累计消费</div>
+      <div style="font-size:36px;font-weight:800;color:var(--primary);">¥${monthTotal.toFixed(1)}</div>
+      <div style="font-size:12px;color:var(--text-lighter);">本月累计下单 ${monthCount} 次</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div style="background:white;border-radius:12px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+        <div style="font-size:28px;">🏪</div>
+        <div style="font-size:12px;color:var(--text-lighter);margin:4px 0;">最常光顾</div>
+        <div style="font-size:14px;font-weight:700;">${favRestaurant ? favRestaurant[0] : '--'}</div>
+        <div style="font-size:11px;color:var(--text-lighter);">${favRestaurant ? favRestaurant[1]+'次' : ''}</div>
+      </div>
+      <div style="background:white;border-radius:12px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+        <div style="font-size:28px;">🍽️</div>
+        <div style="font-size:12px;color:var(--text-lighter);margin:4px 0;">最爱的菜</div>
+        <div style="font-size:14px;font-weight:700;">${favDish ? favDish[0].split('-').pop() : '--'}</div>
+        <div style="font-size:11px;color:var(--text-lighter);">${favDish ? favDish[1]+'次' : ''}</div>
+      </div>
+      <div style="background:white;border-radius:12px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+        <div style="font-size:28px;">🔥</div>
+        <div style="font-size:12px;color:var(--text-lighter);margin:4px 0;">累计摄入热量</div>
+        <div style="font-size:20px;font-weight:700;color:#4CAF50;">0 千卡</div>
+      </div>
+      <div style="background:white;border-radius:12px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+        <div style="font-size:28px;">💰</div>
+        <div style="font-size:12px;color:var(--text-lighter);margin:4px 0;">累计省钱</div>
+        <div style="font-size:20px;font-weight:700;color:#4CAF50;">¥${orders.reduce((s,o)=>s+o.total,0).toFixed(1)}</div>
+      </div>
+    </div>
+    <button style="margin-top:16px;width:100%;padding:12px;background:var(--bg);border:none;border-radius:12px;font-size:14px;color:var(--text-lighter);cursor:pointer;" onclick="clearStats()">🗑️ 清除记录</button>
+  `;
+  overlay.classList.add('show');
+}
+
+function clearStats() {
+  if (confirm('确定要清除所有历史记录吗？')) {
+    localStorage.removeItem('foodOrders');
+    localStorage.removeItem('foodClicks');
+    document.getElementById('statsOverlay').classList.remove('show');
+    showToast('记录已清除');
   }
 }
 
@@ -958,6 +1083,22 @@ function startCheckout() {
   // 记录本单价格
   const orderPrice = getCartTotal() + getDeliveryFee() - getDiscount();
 
+  // 保存订单到历史
+  const cartItems = getCartItems();
+  const firstItem = cartItems[0];
+  const restaurantName = firstItem ? allData.restaurants.find(r => r.id == firstItem.restaurantId)?.name || '未知餐厅' : '未知餐厅';
+  const now = new Date();
+  currentOrder = {
+    restaurant: restaurantName,
+    items: cartItems.map(it => ({ name: it.dish.name, price: it.dish.price, qty: it.qty })),
+    total: orderPrice,
+    time: now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0'),
+    date: now.getMonth()+1 + '/' + now.getDate(),
+    month: now.getFullYear() + '-' + (now.getMonth()+1),
+    orderId: '#' + now.getTime().toString().slice(-8)
+  };
+  saveOrder(currentOrder);
+
   // 结算后自动清空购物车，用户可以马上点下一单
   clearCart();
 
@@ -1118,21 +1259,88 @@ function startCheckout() {
   // 每20秒检查随机事件
   eventTimer = setInterval(maybeTriggerRandomEvent, 12000);
 
-  // 点击蒙层可以跳过
+  // 点击蒙层不再跳过配送，防止误触
   overlay.onclick = function(e) {
-    if (e.target === overlay) skipDelivery();
+    // 不处理，用户用按钮操作
   };
 }
 
 function showSuccess() {
   document.getElementById('deliveryOverlay').classList.remove('show');
-  const total = getCartTotal(); const discount = getDiscount(); const deliveryFee = getDeliveryFee(); const final = total + deliveryFee - discount;
-  document.getElementById('orderId').textContent = '#' + Date.now().toString().slice(-10);
-  document.getElementById('successSubtotal').textContent = '¥' + total.toFixed(1);
-  document.getElementById('successDelivery').textContent = '¥' + deliveryFee.toFixed(1);
-  document.getElementById('successDiscount').textContent = '-¥' + discount.toFixed(1);
+  // 优先用 currentOrder，如果为空从 localStorage 取最新
+  const order = currentOrder || (getOrderHistory()[0]) || null;
+  if (!order) { showToast('订单数据丢失了...'); return; }
+  const final = order.total;
+  // 估算原价（满减前）：total = final + discount (discount已计入final计算)
+  const itemsTotal = order.items.reduce((s, it) => s + it.price * it.qty, 0);
+  document.getElementById('orderId').textContent = order.orderId;
+  document.getElementById('successSubtotal').textContent = '¥' + itemsTotal.toFixed(1);
+  document.getElementById('successDelivery').textContent = '¥0';
+  document.getElementById('successDiscount').textContent = '-¥' + Math.max(0, itemsTotal - final).toFixed(1);
   document.getElementById('successTotal').textContent = '¥' + final.toFixed(1);
   document.getElementById('successOverlay').classList.add('show');
+  // 隐藏统计和历史弹窗
+  document.getElementById('statsOverlay').classList.remove('show');
+  document.getElementById('historyOverlay').classList.remove('show');
+}
+
+function generateShareCard() {
+  const order = currentOrder || (getOrderHistory()[0]) || null;
+  if (!order) { showToast('暂无订单数据'); return; }
+  const canvas = document.createElement('canvas');
+  canvas.width = 375; canvas.height = 500;
+  const ctx = canvas.getContext('2d');
+  // 背景
+  const grad = ctx.createLinearGradient(0, 0, 0, 500);
+  grad.addColorStop(0, '#FF6600'); grad.addColorStop(1, '#FF8533');
+  ctx.fillStyle = grad; ctx.fillRect(0, 0, 375, 500);
+  // 白色卡片
+  ctx.fillStyle = 'white'; ctx.beginPath(); ctx.roundRect(24, 40, 327, 420, 16); ctx.fill();
+  // 标题
+  ctx.fillStyle = '#333'; ctx.font = 'bold 20px -apple-system, sans-serif';
+  ctx.textAlign = 'center'; ctx.fillText('🍔 美味外卖 · 消费记录', 187, 90);
+  // 餐厅
+  ctx.font = '16px -apple-system, sans-serif'; ctx.fillStyle = '#666';
+  ctx.fillText(order.restaurant, 187, 130);
+  // 菜品列表
+  ctx.font = '13px -apple-system, sans-serif'; ctx.fillStyle = '#999';
+  ctx.textAlign = 'left';
+  order.items.forEach((it, i) => {
+    ctx.fillText(`${it.name} x${it.qty}`, 50, 170 + i * 24);
+    ctx.textAlign = 'right';
+    ctx.fillText(`¥${(it.price * it.qty).toFixed(1)}`, 325, 170 + i * 24);
+    ctx.textAlign = 'left';
+  });
+  // 分隔线
+  const lineY = 190 + order.items.length * 24;
+  ctx.strokeStyle = '#EEE'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(50, lineY); ctx.lineTo(325, lineY); ctx.stroke();
+  // 总价
+  ctx.font = 'bold 28px -apple-system, sans-serif'; ctx.fillStyle = '#FF6600';
+  ctx.textAlign = 'center'; ctx.fillText('¥' + order.total.toFixed(1), 187, lineY + 45);
+  // 0千卡
+  ctx.font = '14px -apple-system, sans-serif'; ctx.fillStyle = '#4CAF50';
+  ctx.fillText('🔥 摄入热量：0 千卡', 187, lineY + 75);
+  ctx.fillText('💰 实际消费：¥0  省钱：¥' + order.total.toFixed(1), 187, lineY + 100);
+  // 底部
+  ctx.font = '11px -apple-system, sans-serif'; ctx.fillStyle = '#CCC';
+  ctx.fillText(order.date + ' ' + order.time + ' | ' + order.orderId, 187, lineY + 130);
+  ctx.fillText('假装点外卖 · 不花钱不长胖', 187, lineY + 150);
+  // 显示图片
+  const img = new Image();
+  img.src = canvas.toDataURL('image/png');
+  img.style.width = '100%'; img.style.maxWidth = '375px'; img.style.borderRadius = '12px';
+  const shareArea = document.getElementById('shareCardArea');
+  shareArea.innerHTML = '';
+  shareArea.appendChild(img);
+  shareArea.style.display = 'block';
+  document.getElementById('shareCardClose').style.display = 'inline-block';
+  showToast('📸 长按图片即可保存分享~');
+}
+
+function closeShareCard() {
+  document.getElementById('shareCardArea').style.display = 'none';
+  document.getElementById('shareCardClose').style.display = 'none';
 }
 
 function resetApp() {
@@ -1141,8 +1349,13 @@ function resetApp() {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   document.querySelector('.filter-btn[data-sort="default"]').classList.add('active');
   document.getElementById('successOverlay').classList.remove('show');
+  document.getElementById('statsOverlay').classList.remove('show');
+  document.getElementById('historyOverlay').classList.remove('show');
+  document.getElementById('shareCardArea').style.display = 'none';
+  document.getElementById('shareCardClose').style.display = 'none';
   updateCartUI(); renderCategories(); renderRestaurants();
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  switchTab('home');
 }
 
 function showToast(msg) {
