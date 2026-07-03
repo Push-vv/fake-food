@@ -18,46 +18,41 @@ const allData = {
     {
       "id": "韩料",
       "name": "韩料",
-      "emoji": "🇰🇷"
+      "emoji": "🥩"
     },
     {
       "id": "面食",
-      "name": "面食",
-      "emoji": "🍜"
-    },
-    {
-      "id": "米线",
-      "name": "米线",
+      "name": "面食粉类",
       "emoji": "🍜"
     },
     {
       "id": "披萨",
-      "name": "披萨",
+      "name": "披萨意面",
       "emoji": "🍕"
     },
     {
       "id": "炸鸡",
-      "name": "炸鸡",
+      "name": "炸鸡炸物",
       "emoji": "🍗"
     },
     {
       "id": "甜品",
-      "name": "甜品",
+      "name": "甜品烘焙",
       "emoji": "🍰"
     },
     {
       "id": "奶茶",
-      "name": "奶茶",
+      "name": "奶茶饮品",
       "emoji": "🧋"
     },
     {
       "id": "小吃",
-      "name": "小吃",
+      "name": "小吃零食",
       "emoji": "🥟"
     },
     {
       "id": "轻食",
-      "name": "轻食",
+      "name": "轻食沙拉",
       "emoji": "🥗"
     },
     {
@@ -67,18 +62,18 @@ const allData = {
     },
     {
       "id": "川菜",
-      "name": "川菜",
+      "name": "川湘云贵",
       "emoji": "🌶️"
     },
     {
       "id": "粤菜",
-      "name": "粤菜",
+      "name": "粤菜港式",
       "emoji": "🥢"
     },
     {
       "id": "湘菜",
-      "name": "湘菜",
-      "emoji": "🌶️"
+      "name": "湘鄂风味",
+      "emoji": "🔥"
     },
     {
       "id": "东北菜",
@@ -87,27 +82,12 @@ const allData = {
     },
     {
       "id": "西北菜",
-      "name": "西北菜",
-      "emoji": "🍜"
-    },
-    {
-      "id": "云南菜",
-      "name": "云南菜",
-      "emoji": "🍄"
-    },
-    {
-      "id": "新疆菜",
-      "name": "新疆菜",
-      "emoji": "🍖"
-    },
-    {
-      "id": "闽南菜",
-      "name": "闽南菜",
-      "emoji": "🍜"
+      "name": "西北新疆",
+      "emoji": "🐑"
     },
     {
       "id": "江浙菜",
-      "name": "江浙菜",
+      "name": "江浙闽南",
       "emoji": "🦀"
     },
     {
@@ -116,89 +96,19 @@ const allData = {
       "emoji": "🐟"
     },
     {
-      "id": "湖北菜",
-      "name": "湖北菜",
-      "emoji": "🍜"
-    },
-    {
-      "id": "北京菜",
-      "name": "北京菜",
-      "emoji": "🦆"
-    },
-    {
-      "id": "潮汕菜",
-      "name": "潮汕菜",
-      "emoji": "🥩"
-    },
-    {
-      "id": "海南菜",
-      "name": "海南菜",
-      "emoji": "🥥"
-    },
-    {
-      "id": "贵州菜",
-      "name": "贵州菜",
-      "emoji": "🌶️"
-    },
-    {
       "id": "泰国菜",
-      "name": "泰国菜",
+      "name": "东南亚菜",
       "emoji": "🍛"
     },
     {
-      "id": "港式",
-      "name": "港式",
-      "emoji": "🥡"
+      "id": "奢华料理",
+      "name": "奢华料理",
+      "emoji": "💎"
     },
     {
-      "id": "麻辣烫",
-      "name": "麻辣烫",
-      "emoji": "🍲"
-    },
-    {
-      "id": "螺蛳粉",
-      "name": "螺蛳粉",
-      "emoji": "🍜"
-    },
-    {
-      "id": "重庆小面",
-      "name": "重庆小面",
-      "emoji": "🍜"
-    },
-    {
-      "id": "麻辣香锅",
-      "name": "麻辣香锅",
-      "emoji": "🌶️"
-    },
-    {
-      "id": "黄焖鸡",
-      "name": "黄焖鸡",
-      "emoji": "🍗"
-    },
-    {
-      "id": "饺子馄饨",
-      "name": "饺子馄饨",
-      "emoji": "🥟"
-    },
-    {
-      "id": "粥粉面",
-      "name": "粥粉面",
-      "emoji": "🍜"
-    },
-    {
-      "id": "烤鱼",
-      "name": "烤鱼",
-      "emoji": "🐟"
-    },
-    {
-      "id": "酸菜鱼",
-      "name": "酸菜鱼",
-      "emoji": "🐟"
-    },
-    {
-      "id": "串串香",
-      "name": "串串香",
-      "emoji": "🍢"
+      "id": "酒水珍品",
+      "name": "酒水珍品",
+      "emoji": "🍷"
     }
   ],
   "restaurants": [
@@ -212,69 +122,98 @@ const allData = {
       "minPrice": 20,
       "dishes": [
         {
-          "name": "烤鸡翅",
-          "price": 7,
-          "emoji": "🍗",
-          "description": "奥尔良风味，皮脆肉嫩多汁",
-          "monthlySales": 1558
-        },
-        {
-          "name": "牛肉串",
-          "price": 8,
-          "emoji": "🥩",
-          "description": "澳洲进口牛肉，秘制酱料腌制",
-          "monthlySales": 793
-        },
-        {
-          "name": "烤鱿鱼",
-          "price": 14,
-          "emoji": "🦑",
-          "description": "整只鱿鱼，Q弹有嚼劲",
-          "monthlySales": 681
-        },
-        {
-          "name": "烤生蚝",
-          "price": 18,
-          "emoji": "🦪",
-          "description": "乳山生蚝，蒜蓉炭烤，鲜美无比",
-          "monthlySales": 812
-        },
-        {
-          "name": "烤茄子",
-          "price": 15,
-          "emoji": "🍆",
-          "description": "蒜蓉粉丝烤茄子，软糯入味",
-          "monthlySales": 929
-        },
-        {
-          "name": "羊肉串",
-          "price": 6,
+          "name": "烤羊排",
+          "price": 32,
           "emoji": "🍖",
-          "description": "精选羊腿肉，炭火慢烤，外焦里嫩",
-          "monthlySales": 1112
+          "description": "炭火慢烤，外焦里嫩，撕开冒油",
+          "monthlySales": 876
         },
         {
-          "name": "烤玉米",
-          "price": 7,
-          "emoji": "🌽",
-          "description": "香甜玉米段，刷上秘制酱料",
-          "monthlySales": 701
+          "name": "烤羊腰",
+          "price": 28,
+          "emoji": "🍖",
+          "description": "滋补羊腰，孜然辣椒面一撒，香而不膻",
+          "monthlySales": 654
         },
         {
-          "name": "烤金针菇",
-          "price": 8,
-          "emoji": "🍄",
-          "description": "锡纸金针菇，蒜香浓郁",
+          "name": "烤蚕蛹",
+          "price": 18,
+          "emoji": "🐛",
+          "description": "东北特色，外酥里嫩，高蛋白下酒神品",
           "monthlySales": 523
         },
         {
-          "name": "烤秋刀鱼",
-          "price": 17,
-          "emoji": "🐟",
-          "description": "日式风味，挤上柠檬汁",
-          "monthlySales": 577
+          "name": "烤酸菜",
+          "price": 12,
+          "emoji": "🥬",
+          "description": "铁盘烤酸菜，酸爽解腻，配五花肉一绝",
+          "monthlySales": 901
+        },
+        {
+          "name": "烤五花肉",
+          "price": 16,
+          "emoji": "🥓",
+          "description": "厚切五花，油脂滋滋作响，卷生菜吃",
+          "monthlySales": 1123
+        },
+        {
+          "name": "烤实蛋",
+          "price": 6,
+          "emoji": "🥚",
+          "description": "东北特色实蛋，弹牙劲道，刷蒜蓉辣酱",
+          "monthlySales": 678
+        },
+        {
+          "name": "烤大筋皮",
+          "price": 15,
+          "emoji": "🍢",
+          "description": "牛筋皮软糯有嚼劲，越嚼越香",
+          "monthlySales": 745
+        },
+        {
+          "name": "烤鸡头",
+          "price": 8,
+          "emoji": "🐔",
+          "description": "东北烧烤灵魂，焦香酥脆，嗦骨头",
+          "monthlySales": 432
+        },
+        {
+          "name": "烤毛蛋",
+          "price": 10,
+          "emoji": "🥚",
+          "description": "活珠子烤制，鲜美滋补，重口味最爱",
+          "monthlySales": 387
+        },
+        {
+          "name": "烤火腿肠",
+          "price": 5,
+          "emoji": "🌭",
+          "description": "童年回忆，改刀烤开花，刷酱料",
+          "monthlySales": 1345
+        },
+        {
+          "name": "烤馒头片",
+          "price": 4,
+          "emoji": "🍞",
+          "description": "金黄酥脆，撒白糖或刷辣酱都好吃",
+          "monthlySales": 1678
+        },
+        {
+          "name": "烤韭菜盒子",
+          "price": 8,
+          "emoji": "🥟",
+          "description": "韭菜鸡蛋馅，铁板煎烤，外酥里鲜",
+          "monthlySales": 556
+        },
+        {
+          "name": "烤冷面",
+          "price": 10,
+          "emoji": "🫓",
+          "description": "铁板烤冷面，加蛋加肠，酸甜酱汁",
+          "monthlySales": 2234
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 2,
@@ -286,80 +225,116 @@ const allData = {
       "minPrice": 20,
       "dishes": [
         {
-          "name": "牛肉串",
-          "price": 7,
-          "emoji": "🥩",
-          "description": "澳洲进口牛肉，秘制酱料腌制",
-          "monthlySales": 820
+          "name": "蒜蓉烤生蚝",
+          "price": 18,
+          "emoji": "🦪",
+          "description": "乳山生蚝，蒜蓉铺满，炭烤冒泡",
+          "monthlySales": 2341
         },
         {
-          "name": "烤秋刀鱼",
-          "price": 20,
+          "name": "黄油烤扇贝",
+          "price": 22,
+          "emoji": "🐚",
+          "description": "大扇贝加黄油蒜蓉，鲜甜弹牙",
+          "monthlySales": 1876
+        },
+        {
+          "name": "蜜汁烤大虾",
+          "price": 16,
+          "emoji": "🦐",
+          "description": "开背大虾，刷蜂蜜烤制，壳脆肉嫩",
+          "monthlySales": 1567
+        },
+        {
+          "name": "盐烤秋刀鱼",
+          "price": 15,
           "emoji": "🐟",
-          "description": "日式风味，挤上柠檬汁",
-          "monthlySales": 370
+          "description": "整条秋刀鱼，海盐炭烤，挤柠檬汁",
+          "monthlySales": 1234
         },
         {
-          "name": "烤玉米",
-          "price": 9,
-          "emoji": "🌽",
-          "description": "香甜玉米段，刷上秘制酱料",
-          "monthlySales": 716
+          "name": "酱烤鱿鱼须",
+          "price": 14,
+          "emoji": "🦑",
+          "description": "鱿鱼须刷秘制酱，Q弹有嚼劲",
+          "monthlySales": 1421
         },
         {
-          "name": "羊肉串",
-          "price": 5,
-          "emoji": "🍖",
-          "description": "精选羊腿肉，炭火慢烤，外焦里嫩",
-          "monthlySales": 1295
+          "name": "芝士烤生蚝",
+          "price": 20,
+          "emoji": "🦪",
+          "description": "生蚝铺芝士，奶香与鲜味交融",
+          "monthlySales": 998
         },
         {
-          "name": "烤鸡翅",
-          "price": 7,
-          "emoji": "🍗",
-          "description": "奥尔良风味，皮脆肉嫩多汁",
-          "monthlySales": 1660
+          "name": "烤小黄鱼",
+          "price": 12,
+          "emoji": "🐟",
+          "description": "小黄鱼腌制入味，烤至干香，连骨酥脆",
+          "monthlySales": 876
         },
         {
-          "name": "烤金针菇",
-          "price": 6,
-          "emoji": "🍄",
-          "description": "锡纸金针菇，蒜香浓郁",
+          "name": "蒜蓉烤花蛤",
+          "price": 16,
+          "emoji": "🐚",
+          "description": "花蛤铺蒜蓉，烤至开口，汁水鲜美",
+          "monthlySales": 1345
+        },
+        {
+          "name": "烤带子",
+          "price": 20,
+          "emoji": "🐚",
+          "description": "大带子加蒜蓉粉丝，鲜甜肥美",
+          "monthlySales": 765
+        },
+        {
+          "name": "烤海螺",
+          "price": 18,
+          "emoji": "🐚",
+          "description": "海螺切片烤制，蘸芥末酱油",
           "monthlySales": 543
         },
         {
-          "name": "烤生蚝",
-          "price": 18,
-          "emoji": "🦪",
-          "description": "乳山生蚝，蒜蓉炭烤，鲜美无比",
-          "monthlySales": 596
+          "name": "烤干贝串",
+          "price": 10,
+          "emoji": "🍢",
+          "description": "干贝串烤至金黄，口感鲜甜有嚼劲",
+          "monthlySales": 987
         },
         {
-          "name": "烤韭菜",
-          "price": 5,
-          "emoji": "🥬",
-          "description": "新鲜韭菜，撒上芝麻孜然",
-          "monthlySales": 390
+          "name": "烤海虾串",
+          "price": 12,
+          "emoji": "🦐",
+          "description": "竹签串海虾，烤出焦香，虾肉紧实",
+          "monthlySales": 1123
         },
         {
-          "name": "烤鱿鱼",
-          "price": 11,
-          "emoji": "🦑",
-          "description": "整只鱿鱼，Q弹有嚼劲",
-          "monthlySales": 631
-        },
-        {
-          "name": "烤茄子",
+          "name": "烤鱿鱼圈",
           "price": 13,
-          "emoji": "🍆",
-          "description": "蒜蓉粉丝烤茄子，软糯入味",
-          "monthlySales": 792
+          "emoji": "🦑",
+          "description": "鱿鱼圈裹浆烤，外脆里弹",
+          "monthlySales": 654
+        },
+        {
+          "name": "烤鱼丸串",
+          "price": 6,
+          "emoji": "🍢",
+          "description": "手工鱼丸串，烤至外皮微焦",
+          "monthlySales": 876
+        },
+        {
+          "name": "烤蟹棒",
+          "price": 5,
+          "emoji": "🦀",
+          "description": "蟹棒刷酱烤，鲜甜软嫩",
+          "monthlySales": 1456
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 3,
-      "name": "深夜放毒烧烤",
+      "name": "深夜烤物局",
       "category": "烧烤",
       "rating": 4.3,
       "deliveryTime": 35,
@@ -367,80 +342,109 @@ const allData = {
       "minPrice": 25,
       "dishes": [
         {
+          "name": "鸡皮串",
+          "price": 8,
+          "emoji": "🍗",
+          "description": "烤至金黄焦脆，油脂香爆炸",
+          "monthlySales": 2134
+        },
+        {
+          "name": "鸡胗串",
+          "price": 9,
+          "emoji": "🍗",
+          "description": "劲道脆嫩，越嚼越香，下酒神器",
+          "monthlySales": 1876
+        },
+        {
+          "name": "鸡心串",
+          "price": 8,
+          "emoji": "❤️",
+          "description": "烤鸡心软嫩多汁，酱香浓郁",
+          "monthlySales": 1567
+        },
+        {
+          "name": "鸡肝串",
+          "price": 7,
+          "emoji": "🍗",
+          "description": "绵密鲜甜，刷照烧酱，入口即化",
+          "monthlySales": 1234
+        },
+        {
+          "name": "大葱鸡肉串",
+          "price": 12,
+          "emoji": "🍢",
+          "description": "鸡腿肉加大葱段，葱香鸡肉融合",
+          "monthlySales": 1987
+        },
+        {
+          "name": "提灯",
+          "price": 18,
+          "emoji": "🥚",
+          "description": "稀有部位，未熟蛋黄配鸡肝，爆浆口感",
+          "monthlySales": 654
+        },
+        {
+          "name": "烤饭团",
+          "price": 10,
+          "emoji": "🍙",
+          "description": "饭团刷酱烤至焦香，外脆里软",
+          "monthlySales": 1432
+        },
+        {
+          "name": "鸡翅包饭",
+          "price": 16,
+          "emoji": "🍗",
+          "description": "去骨鸡翅塞糯米，烤至外焦里糯",
+          "monthlySales": 876
+        },
+        {
+          "name": "肉末青椒串",
+          "price": 10,
+          "emoji": "🫑",
+          "description": "青椒塞肉末，烤出焦香带清甜",
+          "monthlySales": 1098
+        },
+        {
+          "name": "芝士年糕串",
+          "price": 10,
+          "emoji": "🧀",
+          "description": "年糕夹芝士，外脆里拉丝",
+          "monthlySales": 1654
+        },
+        {
+          "name": "烤银杏",
+          "price": 8,
+          "emoji": "🥜",
+          "description": "盐焗银杏，软糯带苦香，配清酒绝妙",
+          "monthlySales": 987
+        },
+        {
+          "name": "烤蘑菇串",
+          "price": 8,
+          "emoji": "🍄",
+          "description": "香菇烤出汁水，撒七味粉",
+          "monthlySales": 1234
+        },
+        {
+          "name": "烤秋葵",
+          "price": 8,
+          "emoji": "🥬",
+          "description": "秋葵烤至微焦，滑嫩清爽",
+          "monthlySales": 876
+        },
+        {
           "name": "烤茄子",
           "price": 12,
           "emoji": "🍆",
-          "description": "蒜蓉粉丝烤茄子，软糯入味",
-          "monthlySales": 977
-        },
-        {
-          "name": "烤生蚝",
-          "price": 18,
-          "emoji": "🦪",
-          "description": "乳山生蚝，蒜蓉炭烤，鲜美无比",
+          "description": "日式烤茄子，味噌酱汁，软糯鲜甜",
           "monthlySales": 765
-        },
-        {
-          "name": "牛肉串",
-          "price": 5,
-          "emoji": "🥩",
-          "description": "澳洲进口牛肉，秘制酱料腌制",
-          "monthlySales": 1130
-        },
-        {
-          "name": "烤鱿鱼",
-          "price": 12,
-          "emoji": "🦑",
-          "description": "整只鱿鱼，Q弹有嚼劲",
-          "monthlySales": 973
-        },
-        {
-          "name": "烤金针菇",
-          "price": 6,
-          "emoji": "🍄",
-          "description": "锡纸金针菇，蒜香浓郁",
-          "monthlySales": 637
-        },
-        {
-          "name": "烤韭菜",
-          "price": 3,
-          "emoji": "🥬",
-          "description": "新鲜韭菜，撒上芝麻孜然",
-          "monthlySales": 511
-        },
-        {
-          "name": "烤玉米",
-          "price": 7,
-          "emoji": "🌽",
-          "description": "香甜玉米段，刷上秘制酱料",
-          "monthlySales": 537
-        },
-        {
-          "name": "羊肉串",
-          "price": 3,
-          "emoji": "🍖",
-          "description": "精选羊腿肉，炭火慢烤，外焦里嫩",
-          "monthlySales": 1108
-        },
-        {
-          "name": "烤秋刀鱼",
-          "price": 20,
-          "emoji": "🐟",
-          "description": "日式风味，挤上柠檬汁",
-          "monthlySales": 587
-        },
-        {
-          "name": "烤鸡翅",
-          "price": 8,
-          "emoji": "🍗",
-          "description": "奥尔良风味，皮脆肉嫩多汁",
-          "monthlySales": 1408
         }
-      ]
+      ],
+      "icon": "🔥"
     },
     {
       "id": 4,
-      "name": "撑死烧烤",
+      "name": "霸气烤肉",
       "category": "烧烤",
       "rating": 4.6,
       "deliveryTime": 40,
@@ -448,76 +452,105 @@ const allData = {
       "minPrice": 20,
       "dishes": [
         {
-          "name": "烤鸡翅",
-          "price": 10,
-          "emoji": "🍗",
-          "description": "奥尔良风味，皮脆肉嫩多汁",
-          "monthlySales": 1552
-        },
-        {
-          "name": "烤茄子",
-          "price": 10,
-          "emoji": "🍆",
-          "description": "蒜蓉粉丝烤茄子，软糯入味",
-          "monthlySales": 1036
-        },
-        {
-          "name": "烤生蚝",
-          "price": 13,
-          "emoji": "🦪",
-          "description": "乳山生蚝，蒜蓉炭烤，鲜美无比",
-          "monthlySales": 536
-        },
-        {
-          "name": "烤金针菇",
-          "price": 7,
-          "emoji": "🍄",
-          "description": "锡纸金针菇，蒜香浓郁",
-          "monthlySales": 841
-        },
-        {
-          "name": "烤韭菜",
-          "price": 4,
-          "emoji": "🥬",
-          "description": "新鲜韭菜，撒上芝麻孜然",
-          "monthlySales": 698
-        },
-        {
-          "name": "烤鱿鱼",
-          "price": 13,
-          "emoji": "🦑",
-          "description": "整只鱿鱼，Q弹有嚼劲",
-          "monthlySales": 885
-        },
-        {
-          "name": "烤玉米",
-          "price": 4,
-          "emoji": "🌽",
-          "description": "香甜玉米段，刷上秘制酱料",
-          "monthlySales": 597
-        },
-        {
-          "name": "牛肉串",
-          "price": 7,
-          "emoji": "🥩",
-          "description": "澳洲进口牛肉，秘制酱料腌制",
-          "monthlySales": 1085
-        },
-        {
-          "name": "羊肉串",
-          "price": 6,
+          "name": "红柳大串",
+          "price": 25,
           "emoji": "🍖",
-          "description": "精选羊腿肉，炭火慢烤，外焦里嫩",
-          "monthlySales": 1270
+          "description": "红柳枝穿大块羊肉，果木香与肉香交织",
+          "monthlySales": 1567
         },
         {
-          "name": "烤秋刀鱼",
+          "name": "馕坑烤羊排",
+          "price": 35,
+          "emoji": "🍖",
+          "description": "馕坑高温烤制，外层焦脆，肉汁封存",
+          "monthlySales": 987
+        },
+        {
+          "name": "馕坑烤羊肝",
           "price": 18,
-          "emoji": "🐟",
-          "description": "日式风味，挤上柠檬汁",
-          "monthlySales": 503
+          "emoji": "🍖",
+          "description": "新鲜羊肝，馕坑烤至嫩滑，无腥味",
+          "monthlySales": 654
+        },
+        {
+          "name": "烤包子（肉馅）",
+          "price": 8,
+          "emoji": "🥟",
+          "description": "羊肉洋葱馅，馕坑烤至外皮酥脆",
+          "monthlySales": 2345
+        },
+        {
+          "name": "烤馕",
+          "price": 6,
+          "emoji": "🫓",
+          "description": "炭火烤馕，外脆内软，麦香浓郁",
+          "monthlySales": 3124
+        },
+        {
+          "name": "架子肉",
+          "price": 38,
+          "emoji": "🍖",
+          "description": "羊腿肉挂铁架，果木慢烤，手撕大块",
+          "monthlySales": 765
+        },
+        {
+          "name": "烤羊腰子（新疆风味）",
+          "price": 30,
+          "emoji": "🍖",
+          "description": "整只羊腰炭烤，孜然辣椒面厚撒",
+          "monthlySales": 543
+        },
+        {
+          "name": "烤羊心",
+          "price": 15,
+          "emoji": "❤️",
+          "description": "羊心烤至干香，切片蘸料，嚼劲十足",
+          "monthlySales": 876
+        },
+        {
+          "name": "烤羊肠",
+          "price": 18,
+          "emoji": "🌭",
+          "description": "羊肠处理干净，烤至焦香，外脆里嫩",
+          "monthlySales": 654
+        },
+        {
+          "name": "烤羊鞭",
+          "price": 25,
+          "emoji": "🍖",
+          "description": "滋补羊鞭，炭火慢烤，胶质满满",
+          "monthlySales": 432
+        },
+        {
+          "name": "烤羊肉丸",
+          "price": 12,
+          "emoji": "🍢",
+          "description": "手工羊肉丸，Q弹多汁，孜然味浓",
+          "monthlySales": 987
+        },
+        {
+          "name": "烤土豆",
+          "price": 8,
+          "emoji": "🥔",
+          "description": "锡纸烤土豆，软糯翻沙，配酸奶酱",
+          "monthlySales": 1234
+        },
+        {
+          "name": "烤洋葱",
+          "price": 6,
+          "emoji": "🧅",
+          "description": "整颗洋葱炭烤，甜软多汁",
+          "monthlySales": 876
+        },
+        {
+          "name": "烤辣椒",
+          "price": 5,
+          "emoji": "🫑",
+          "description": "烤青椒微焦，撒盐即食，清甜解腻",
+          "monthlySales": 1432
         }
-      ]
+      ],
+      "icon": "🔥"
     },
     {
       "id": 5,
@@ -529,80 +562,130 @@ const allData = {
       "minPrice": 25,
       "dishes": [
         {
-          "name": "番茄锅底",
-          "price": 36,
-          "emoji": "🍅",
-          "description": "新鲜番茄熬制，酸甜开胃",
-          "monthlySales": 1620
-        },
-        {
-          "name": "毛肚",
+          "name": "牛油红汤锅底",
           "price": 48,
-          "emoji": "🐂",
-          "description": "七上八下，脆嫩爽口",
-          "monthlySales": 2327
-        },
-        {
-          "name": "虾滑",
-          "price": 38,
-          "emoji": "🦐",
-          "description": "手工打制，虾肉饱满",
-          "monthlySales": 1511
-        },
-        {
-          "name": "菌汤锅底",
-          "price": 41,
-          "emoji": "🍄",
-          "description": "多种菌菇熬制，鲜美养生",
-          "monthlySales": 1078
-        },
-        {
-          "name": "肥牛卷",
-          "price": 42,
-          "emoji": "🥓",
-          "description": "澳洲肥牛，纹理清晰",
-          "monthlySales": 2090
-        },
-        {
-          "name": "麻辣牛油锅底",
-          "price": 47,
           "emoji": "🌶️",
-          "description": "重庆老火锅，牛油醇厚，麻辣鲜香",
-          "monthlySales": 2076
+          "description": "纯牛油熬制，麻辣醇厚，越煮越香",
+          "monthlySales": 2678
         },
         {
-          "name": "鸭肠",
-          "price": 34,
+          "name": "鲜毛肚",
+          "price": 52,
+          "emoji": "🐂",
+          "description": "当天现杀，七上八下，脆嫩化渣",
+          "monthlySales": 3456
+        },
+        {
+          "name": "生抠鹅肠",
+          "price": 48,
           "emoji": "🦆",
-          "description": "新鲜鸭肠，爽脆弹牙",
-          "monthlySales": 1400
+          "description": "冰镇鹅肠，烫8秒，爽脆弹牙",
+          "monthlySales": 2987
         },
         {
-          "name": "午餐肉",
-          "price": 24,
-          "emoji": "🥫",
-          "description": "梅林午餐肉，火锅必备",
-          "monthlySales": 1065
+          "name": "黄喉",
+          "price": 42,
+          "emoji": "🐂",
+          "description": "猪黄喉厚切，脆嫩可口",
+          "monthlySales": 2100
         },
         {
-          "name": "金针菇",
-          "price": 11,
-          "emoji": "🍄",
-          "description": "新鲜金针菇，涮火锅绝配",
-          "monthlySales": 659
+          "name": "鲜鸭血",
+          "price": 12,
+          "emoji": "🦆",
+          "description": "冷锅下鸭血，越煮越嫩，入口即化",
+          "monthlySales": 1876
         },
         {
-          "name": "豆腐皮",
+          "name": "脑花",
+          "price": 18,
+          "emoji": "🧠",
+          "description": "新鲜脑花，煮15分钟，绵密细腻",
+          "monthlySales": 1543
+        },
+        {
+          "name": "老肉片",
+          "price": 28,
+          "emoji": "🥩",
+          "description": "厚切猪肉片，久煮不老，肉香浓郁",
+          "monthlySales": 1987
+        },
+        {
+          "name": "耗儿鱼",
+          "price": 35,
+          "emoji": "🐟",
+          "description": "小耗儿鱼，肉质紧实，越煮越入味",
+          "monthlySales": 1654
+        },
+        {
+          "name": "麻辣牛肉",
+          "price": 38,
+          "emoji": "🥩",
+          "description": "辣椒面腌制，涮后麻辣鲜嫩",
+          "monthlySales": 2345
+        },
+        {
+          "name": "香菜丸子",
+          "price": 28,
+          "emoji": "🥩",
+          "description": "手工猪肉丸加香菜，Q弹多汁",
+          "monthlySales": 1765
+        },
+        {
+          "name": "贡菜",
+          "price": 16,
+          "emoji": "🥬",
+          "description": "晒干贡菜，涮后嘎嘣脆",
+          "monthlySales": 1432
+        },
+        {
+          "name": "苕粉",
+          "price": 12,
+          "emoji": "🍜",
+          "description": "红薯宽粉，煮到透明，软糯Q弹",
+          "monthlySales": 2100
+        },
+        {
+          "name": "豆花",
+          "price": 14,
+          "emoji": "🧈",
+          "description": "嫩豆花煮火锅，吸饱红油汤汁",
+          "monthlySales": 1654
+        },
+        {
+          "name": "莴笋头",
+          "price": 12,
+          "emoji": "🥬",
+          "description": "带皮莴笋头，煮久更入味，绵软香甜",
+          "monthlySales": 1321
+        },
+        {
+          "name": "折耳根",
+          "price": 14,
+          "emoji": "🥬",
+          "description": "西南特色，煮后绵软带特殊香气",
+          "monthlySales": 987
+        },
+        {
+          "name": "酥肉",
+          "price": 28,
+          "emoji": "🍗",
+          "description": "现炸酥肉，可直接吃也可涮锅",
+          "monthlySales": 2456
+        },
+        {
+          "name": "红糖冰粉",
           "price": 10,
-          "emoji": "🫔",
-          "description": "手工豆皮，吸满汤汁",
-          "monthlySales": 785
+          "emoji": "🍮",
+          "description": "解辣神器，冰爽清甜，配火锅绝了",
+          "monthlySales": 2876
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 6,
-      "name": "扶墙出火锅",
+      "name": "回味无穷火锅",
       "category": "火锅",
       "rating": 4.9,
       "deliveryTime": 35,
@@ -610,73 +693,123 @@ const allData = {
       "minPrice": 15,
       "dishes": [
         {
-          "name": "土豆片",
-          "price": 11,
-          "emoji": "🥔",
-          "description": "薄切土豆，软糯入味",
-          "monthlySales": 943
+          "name": "清汤铜锅底",
+          "price": 28,
+          "emoji": "🍲",
+          "description": "农夫山泉加姜片葱段，原汁原味",
+          "monthlySales": 2345
         },
         {
-          "name": "番茄锅底",
-          "price": 40,
-          "emoji": "🍅",
-          "description": "新鲜番茄熬制，酸甜开胃",
-          "monthlySales": 1384
+          "name": "手切鲜羊肉",
+          "price": 58,
+          "emoji": "🥩",
+          "description": "现点手切，薄而不散，涮3秒变色即食",
+          "monthlySales": 3456
         },
         {
-          "name": "豆腐皮",
-          "price": 12,
-          "emoji": "🫔",
-          "description": "手工豆皮，吸满汤汁",
-          "monthlySales": 870
+          "name": "大三叉",
+          "price": 62,
+          "emoji": "🥩",
+          "description": "羊后腿肉，肥瘦相间，涮后鲜嫩多汁",
+          "monthlySales": 2876
         },
         {
-          "name": "肥牛卷",
-          "price": 44,
-          "emoji": "🥓",
-          "description": "澳洲肥牛，纹理清晰",
-          "monthlySales": 1916
+          "name": "小三叉",
+          "price": 56,
+          "emoji": "🥩",
+          "description": "羊前腿肉，瘦多肥少，肉香浓郁",
+          "monthlySales": 2567
         },
         {
-          "name": "金针菇",
-          "price": 9,
-          "emoji": "🍄",
-          "description": "新鲜金针菇，涮火锅绝配",
-          "monthlySales": 926
+          "name": "羊上脑",
+          "price": 68,
+          "emoji": "🥩",
+          "description": "羊颈后最嫩部位，脂肪如霜降般美丽",
+          "monthlySales": 2100
         },
         {
-          "name": "虾滑",
-          "price": 39,
-          "emoji": "🦐",
-          "description": "手工打制，虾肉饱满",
-          "monthlySales": 1553
-        },
-        {
-          "name": "毛肚",
-          "price": 47,
+          "name": "牛百叶",
+          "price": 48,
           "emoji": "🐂",
-          "description": "七上八下，脆嫩爽口",
-          "monthlySales": 2365
+          "description": "黑色百叶，涮10秒，脆嫩化渣",
+          "monthlySales": 1987
         },
         {
-          "name": "午餐肉",
-          "price": 22,
+          "name": "羊肚仁",
+          "price": 42,
+          "emoji": "🐑",
+          "description": "羊肚最精华部分，极其脆嫩",
+          "monthlySales": 1543
+        },
+        {
+          "name": "羊心管",
+          "price": 32,
+          "emoji": "❤️",
+          "description": "羊心管切花，涮后脆爽有嚼劲",
+          "monthlySales": 1234
+        },
+        {
+          "name": "羊蹄筋",
+          "price": 38,
+          "emoji": "🐑",
+          "description": "提前炖软，涮后胶质满满，入口即化",
+          "monthlySales": 1432
+        },
+        {
+          "name": "冻豆腐",
+          "price": 12,
+          "emoji": "🧈",
+          "description": "蜂窝状冻豆腐，吸满清汤，豆香浓郁",
+          "monthlySales": 2345
+        },
+        {
+          "name": "白菜心",
+          "price": 10,
+          "emoji": "🥬",
+          "description": "嫩白菜心，涮后清甜解腻",
+          "monthlySales": 1987
+        },
+        {
+          "name": "粉丝",
+          "price": 8,
+          "emoji": "🍜",
+          "description": "龙口粉丝，涮烫即可，吸汤入味",
+          "monthlySales": 1765
+        },
+        {
+          "name": "芝麻酱蘸料",
+          "price": 6,
           "emoji": "🥫",
-          "description": "梅林午餐肉，火锅必备",
-          "monthlySales": 1104
+          "description": "二八酱加韭菜花腐乳，老北京灵魂蘸料",
+          "monthlySales": 4567
         },
         {
-          "name": "鸭肠",
-          "price": 35,
-          "emoji": "🦆",
-          "description": "新鲜鸭肠，爽脆弹牙",
-          "monthlySales": 1732
+          "name": "糖蒜",
+          "price": 8,
+          "emoji": "🧄",
+          "description": "酸甜脆爽，解腻必备",
+          "monthlySales": 3210
+        },
+        {
+          "name": "火烧",
+          "price": 5,
+          "emoji": "🫓",
+          "description": "现烤麻酱火烧，酥脆掉渣",
+          "monthlySales": 2345
+        },
+        {
+          "name": "羊杂拼盘",
+          "price": 48,
+          "emoji": "🐑",
+          "description": "羊肝羊肺羊心羊肚拼盘，一锅涮齐",
+          "monthlySales": 1654
         }
-      ]
+      ],
+      "icon": "🍲"
     },
     {
       "id": 7,
-      "name": "馋哭了寿司",
+      "name": "馋嘴寿司屋",
       "category": "日料",
       "rating": 4.3,
       "deliveryTime": 45,
@@ -684,73 +817,109 @@ const allData = {
       "minPrice": 15,
       "dishes": [
         {
-          "name": "鳗鱼饭",
-          "price": 50,
-          "emoji": "🍱",
-          "description": "蒲烧鳗鱼，酱汁浓郁",
-          "monthlySales": 936
-        },
-        {
-          "name": "金枪鱼刺身",
-          "price": 71,
-          "emoji": "🐟",
-          "description": "蓝鳍金枪鱼，入口即化",
-          "monthlySales": 923
-        },
-        {
-          "name": "日式拉面",
-          "price": 33,
-          "emoji": "🍜",
-          "description": "豚骨汤底，溏心蛋加持",
-          "monthlySales": 1217
-        },
-        {
           "name": "三文鱼刺身",
-          "price": 56,
-          "emoji": "🐟",
-          "description": "挪威三文鱼，厚切新鲜",
-          "monthlySales": 1016
-        },
-        {
-          "name": "天妇罗",
           "price": 38,
-          "emoji": "🍤",
-          "description": "大虾天妇罗，外酥里嫩",
-          "monthlySales": 736
+          "emoji": "🐟",
+          "description": "挪威三文鱼，厚切6片，肥美鲜嫩",
+          "monthlySales": 2345
         },
         {
-          "name": "味噌汤",
-          "price": 14,
-          "emoji": "🥣",
-          "description": "传统味噌，豆腐海带",
-          "monthlySales": 621
-        },
-        {
-          "name": "日式煎饺",
-          "price": 28,
-          "emoji": "🥟",
-          "description": "脆皮煎饺，馅料饱满",
-          "monthlySales": 992
-        },
-        {
-          "name": "寿司拼盘",
-          "price": 89,
-          "emoji": "🍣",
-          "description": "8种口味寿司，精致摆盘",
-          "monthlySales": 859
-        },
-        {
-          "name": "章鱼小丸子",
-          "price": 24,
+          "name": "章鱼烧",
+          "price": 22,
           "emoji": "🐙",
-          "description": "日式经典，木鱼花飘香",
-          "monthlySales": 1267
+          "description": "6颗大章鱼烧，柴鱼片跳舞，酱汁浓郁",
+          "monthlySales": 1876
+        },
+        {
+          "name": "炸猪排定食",
+          "price": 42,
+          "emoji": "🥩",
+          "description": "厚切猪排，金黄酥脆，配卷心菜和味噌汤",
+          "monthlySales": 1543
+        },
+        {
+          "name": "亲子丼",
+          "price": 35,
+          "emoji": "🍚",
+          "description": "鸡肉鸡蛋盖饭，滑嫩鲜甜，家常味道",
+          "monthlySales": 1654
+        },
+        {
+          "name": "咖喱乌冬",
+          "price": 32,
+          "emoji": "🍜",
+          "description": "日式咖喱配Q弹乌冬，浓郁挂汁",
+          "monthlySales": 1432
+        },
+        {
+          "name": "大阪烧",
+          "price": 38,
+          "emoji": "🫓",
+          "description": "关西风味，包菜猪肉煎饼，淋酱撒海苔",
+          "monthlySales": 1321
+        },
+        {
+          "name": "日式蛋包饭",
+          "price": 30,
+          "emoji": "🍳",
+          "description": "滑蛋包裹番茄炒饭，淋番茄酱",
+          "monthlySales": 1567
+        },
+        {
+          "name": "照烧鸡腿饭",
+          "price": 34,
+          "emoji": "🍗",
+          "description": "去骨鸡腿照烧，肉嫩酱香，配米饭绝了",
+          "monthlySales": 1789
+        },
+        {
+          "name": "蟹柳沙拉",
+          "price": 22,
+          "emoji": "🥗",
+          "description": "蟹柳黄瓜丝，配芝麻酱，清爽开胃",
+          "monthlySales": 1234
+        },
+        {
+          "name": "烤三文鱼鳍",
+          "price": 28,
+          "emoji": "🐟",
+          "description": "三文鱼鳍烤至焦香，胶质满满，下酒菜",
+          "monthlySales": 987
+        },
+        {
+          "name": "芥末章鱼",
+          "price": 18,
+          "emoji": "🐙",
+          "description": "章鱼碎配芥末，清爽呛辣，必点小菜",
+          "monthlySales": 1456
+        },
+        {
+          "name": "日式土豆沙拉",
+          "price": 16,
+          "emoji": "🥔",
+          "description": "绵密土豆泥配黄瓜胡萝卜，经典配菜",
+          "monthlySales": 2100
+        },
+        {
+          "name": "抹茶冰淇淋",
+          "price": 12,
+          "emoji": "🍦",
+          "description": "宇治抹茶冰淇淋，浓郁回甘",
+          "monthlySales": 2345
+        },
+        {
+          "name": "日式炸豆腐",
+          "price": 20,
+          "emoji": "🧈",
+          "description": "嫩豆腐炸至金黄，蘸萝卜泥酱油",
+          "monthlySales": 1123
         }
-      ]
+      ],
+      "icon": "🍣"
     },
     {
       "id": 8,
-      "name": "凌晨三点刺身",
+      "name": "深夜刺身馆",
       "category": "日料",
       "rating": 4.7,
       "deliveryTime": 45,
@@ -758,69 +927,98 @@ const allData = {
       "minPrice": 30,
       "dishes": [
         {
-          "name": "味噌汤",
-          "price": 13,
-          "emoji": "🥣",
-          "description": "传统味噌，豆腐海带",
-          "monthlySales": 873
+          "name": "蓝鳍金枪鱼大脂",
+          "price": 128,
+          "emoji": "🐟",
+          "description": "大脂部位，雪花纹理，入口即化",
+          "monthlySales": 567
         },
         {
-          "name": "章鱼小丸子",
-          "price": 20,
-          "emoji": "🐙",
-          "description": "日式经典，木鱼花飘香",
-          "monthlySales": 1544
+          "name": "羽立海胆刺身",
+          "price": 88,
+          "emoji": "🌊",
+          "description": "北海道羽立海胆，金黄饱满，鲜甜浓郁",
+          "monthlySales": 432
         },
         {
-          "name": "鳗鱼饭",
+          "name": "真鲷刺身",
+          "price": 68,
+          "emoji": "🐟",
+          "description": "日本真鲷，薄切晶莹，清甜爽脆",
+          "monthlySales": 523
+        },
+        {
+          "name": "寒鰤鱼刺身",
+          "price": 78,
+          "emoji": "🐟",
+          "description": "冬季寒鰤，油脂丰腴，入口醇厚",
+          "monthlySales": 389
+        },
+        {
+          "name": "牡丹虾刺身",
+          "price": 58,
+          "emoji": "🦐",
+          "description": "活牡丹虾，晶莹剔透，甜糯鲜美",
+          "monthlySales": 678
+        },
+        {
+          "name": "帝王鲑刺身",
+          "price": 72,
+          "emoji": "🐟",
+          "description": "新西兰帝王鲑，油脂丰富，比普通三文鱼更香甜",
+          "monthlySales": 734
+        },
+        {
+          "name": "北极贝刺身",
+          "price": 48,
+          "emoji": "🐚",
+          "description": "鲜活北极贝，爽脆甘甜，红白相间",
+          "monthlySales": 589
+        },
+        {
+          "name": "甜虾刺身",
+          "price": 42,
+          "emoji": "🦐",
+          "description": "北海甜虾，软糯香甜，带籽更鲜",
+          "monthlySales": 654
+        },
+        {
+          "name": "赤贝刺身",
+          "price": 45,
+          "emoji": "🐚",
+          "description": "活赤贝切片，爽脆有嚼劲",
+          "monthlySales": 456
+        },
+        {
+          "name": "大竹夹鱼刺身",
           "price": 55,
-          "emoji": "🍱",
-          "description": "蒲烧鳗鱼，酱汁浓郁",
-          "monthlySales": 1230
-        },
-        {
-          "name": "三文鱼刺身",
-          "price": 56,
           "emoji": "🐟",
-          "description": "挪威三文鱼，厚切新鲜",
-          "monthlySales": 1031
+          "description": "大竹夹鱼，油脂适中，风味清雅",
+          "monthlySales": 398
         },
         {
-          "name": "日式煎饺",
-          "price": 29,
-          "emoji": "🥟",
-          "description": "脆皮煎饺，馅料饱满",
-          "monthlySales": 1022
+          "name": "金目鲷刺身",
+          "price": 65,
+          "emoji": "🐟",
+          "description": "金目鲷皮烧刺身，炙烤皮香，肉质细嫩",
+          "monthlySales": 412
         },
         {
-          "name": "芥末章鱼",
-          "price": 32,
-          "emoji": "🐙",
-          "description": "新鲜章鱼，芥末提味",
-          "monthlySales": 455
-        },
-        {
-          "name": "寿司拼盘",
-          "price": 87,
+          "name": "三文鱼籽军舰",
+          "price": 38,
           "emoji": "🍣",
-          "description": "8种口味寿司，精致摆盘",
-          "monthlySales": 848
+          "description": "颗颗饱满三文鱼籽，爆汁鲜甜",
+          "monthlySales": 723
         },
         {
-          "name": "金枪鱼刺身",
-          "price": 67,
-          "emoji": "🐟",
-          "description": "蓝鳍金枪鱼，入口即化",
-          "monthlySales": 874
-        },
-        {
-          "name": "天妇罗",
-          "price": 39,
-          "emoji": "🍤",
-          "description": "大虾天妇罗，外酥里嫩",
-          "monthlySales": 771
+          "name": "海胆军舰卷",
+          "price": 48,
+          "emoji": "🍣",
+          "description": "海胆加紫菜，海味炸弹",
+          "monthlySales": 567
         }
-      ]
+      ],
+      "icon": "💎"
     },
     {
       "id": 9,
@@ -832,66 +1030,116 @@ const allData = {
       "minPrice": 20,
       "dishes": [
         {
-          "name": "味噌汤",
-          "price": 11,
-          "emoji": "🥣",
-          "description": "传统味噌，豆腐海带",
-          "monthlySales": 585
+          "name": "烧鸟拼盘",
+          "price": 68,
+          "emoji": "🍢",
+          "description": "鸡皮、鸡胗、鸡心、大葱鸡肉各两串，碳火焦香",
+          "monthlySales": 1456
+        },
+        {
+          "name": "蒲烧鳗鱼",
+          "price": 58,
+          "emoji": "🐟",
+          "description": "整条鳗鱼蒲烧，酱汁浓郁，外焦里嫩",
+          "monthlySales": 987
+        },
+        {
+          "name": "天妇罗拼盘",
+          "price": 48,
+          "emoji": "🍤",
+          "description": "虾、茄子、南瓜、青椒，薄脆面衣",
+          "monthlySales": 1234
+        },
+        {
+          "name": "盐烤青花鱼",
+          "price": 32,
+          "emoji": "🐟",
+          "description": "整条青花鱼盐烤，挤柠檬，皮脆肉嫩",
+          "monthlySales": 1654
+        },
+        {
+          "name": "明太子烤土豆",
+          "price": 28,
+          "emoji": "🥔",
+          "description": "土豆上铺明太子，烤至金黄，咸香绵密",
+          "monthlySales": 1876
         },
         {
           "name": "日式煎饺",
-          "price": 29,
+          "price": 25,
           "emoji": "🥟",
-          "description": "脆皮煎饺，馅料饱满",
-          "monthlySales": 898
+          "description": "6只脆底煎饺，猪肉白菜馅，蘸醋吃",
+          "monthlySales": 2100
         },
         {
-          "name": "金枪鱼刺身",
-          "price": 69,
-          "emoji": "🐟",
-          "description": "蓝鳍金枪鱼，入口即化",
-          "monthlySales": 709
+          "name": "烤鸡软骨",
+          "price": 18,
+          "emoji": "🍗",
+          "description": "鸡软骨烤至焦脆，嘎嘣脆，下酒神器",
+          "monthlySales": 1543
         },
         {
-          "name": "三文鱼刺身",
-          "price": 59,
-          "emoji": "🐟",
-          "description": "挪威三文鱼，厚切新鲜",
-          "monthlySales": 1030
+          "name": "烤鸡皮串",
+          "price": 10,
+          "emoji": "🍢",
+          "description": "鸡皮烤至金黄酥脆，油脂香爆炸",
+          "monthlySales": 2345
         },
         {
-          "name": "日式拉面",
-          "price": 34,
-          "emoji": "🍜",
-          "description": "豚骨汤底，溏心蛋加持",
-          "monthlySales": 1294
+          "name": "烤鸡胗串",
+          "price": 12,
+          "emoji": "🍢",
+          "description": "鸡胗切花，脆嫩有嚼劲",
+          "monthlySales": 1987
         },
         {
-          "name": "天妇罗",
-          "price": 36,
-          "emoji": "🍤",
-          "description": "大虾天妇罗，外酥里嫩",
-          "monthlySales": 899
+          "name": "烤鸡心串",
+          "price": 12,
+          "emoji": "🍢",
+          "description": "鸡心烤至外焦里嫩，酱香浓郁",
+          "monthlySales": 1765
         },
         {
-          "name": "章鱼小丸子",
-          "price": 22,
-          "emoji": "🐙",
-          "description": "日式经典，木鱼花飘香",
+          "name": "烤大葱鸡肉串",
+          "price": 14,
+          "emoji": "🍢",
+          "description": "鸡腿肉与大葱段穿插，葱香与肉香融合",
+          "monthlySales": 1899
+        },
+        {
+          "name": "烤香菇串",
+          "price": 10,
+          "emoji": "🍄",
+          "description": "整朵香菇刷酱烤，汁水丰盈",
           "monthlySales": 1432
         },
         {
-          "name": "鳗鱼饭",
-          "price": 52,
-          "emoji": "🍱",
-          "description": "蒲烧鳗鱼，酱汁浓郁",
-          "monthlySales": 1116
+          "name": "烤银杏",
+          "price": 15,
+          "emoji": "🥜",
+          "description": "盐焗银杏，Q弹软糯，微苦回甘",
+          "monthlySales": 987
+        },
+        {
+          "name": "日式冷豆腐",
+          "price": 12,
+          "emoji": "🧈",
+          "description": "嫩豆腐配姜末葱花，浇酱油，清爽开场",
+          "monthlySales": 1654
+        },
+        {
+          "name": "毛豆",
+          "price": 10,
+          "emoji": "🫘",
+          "description": "盐水煮毛豆，撒粗盐，经典下酒菜",
+          "monthlySales": 2789
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 10,
-      "name": "饿得慌韩料",
+      "name": "馋嘴韩料",
       "category": "韩料",
       "rating": 4.9,
       "deliveryTime": 45,
@@ -961,11 +1209,12 @@ const allData = {
           "description": "双拼口味，外酥里嫩",
           "monthlySales": 1661
         }
-      ]
+      ],
+      "icon": "🥩"
     },
     {
       "id": 11,
-      "name": "吃撑了拌饭",
+      "name": "满足拌饭屋",
       "category": "韩料",
       "rating": 4.9,
       "deliveryTime": 45,
@@ -1042,7 +1291,8 @@ const allData = {
           "description": "韩式经典，锅巴香脆",
           "monthlySales": 1435
         }
-      ]
+      ],
+      "icon": "🥩"
     },
     {
       "id": 12,
@@ -1123,11 +1373,12 @@ const allData = {
           "description": "软糯年糕，甜辣酱汁",
           "monthlySales": 1424
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 13,
-      "name": "半夜炸鸡社",
+      "name": "深夜炸鸡社",
       "category": "韩料",
       "rating": 4.3,
       "deliveryTime": 35,
@@ -1204,11 +1455,12 @@ const allData = {
           "description": "双拼口味，外酥里嫩",
           "monthlySales": 1941
         }
-      ]
+      ],
+      "icon": "🍗"
     },
     {
       "id": 14,
-      "name": "胖哥炸酱面",
+      "name": "阿兄炸酱面",
       "category": "面食",
       "rating": 4.2,
       "deliveryTime": 45,
@@ -1278,11 +1530,12 @@ const allData = {
           "description": "陕西风味，酸辣可口",
           "monthlySales": 804
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 15,
-      "name": "吃撑了拉面",
+      "name": "好味拉面",
       "category": "面食",
       "rating": 4.2,
       "deliveryTime": 25,
@@ -1359,12 +1612,13 @@ const allData = {
           "description": "陕西风味，酸辣可口",
           "monthlySales": 875
         }
-      ]
+      ],
+      "icon": "🍜"
     },
     {
       "id": 16,
-      "name": "馋哭了米线",
-      "category": "米线",
+      "name": "馋嘴米线",
+      "category": "面食",
       "rating": 4.7,
       "deliveryTime": 50,
       "deliveryFee": 3,
@@ -1440,12 +1694,13 @@ const allData = {
           "description": "老母鸡汤，滋补养生",
           "monthlySales": 796
         }
-      ]
+      ],
+      "icon": "🍜"
     },
     {
       "id": 17,
-      "name": "凌晨三点米线",
-      "category": "米线",
+      "name": "深夜米线馆",
+      "category": "面食",
       "rating": 4.1,
       "deliveryTime": 45,
       "deliveryFee": 8,
@@ -1521,12 +1776,13 @@ const allData = {
           "description": "酸菜鱼汤，鱼肉嫩滑",
           "monthlySales": 1256
         }
-      ]
+      ],
+      "icon": "🎯"
     },
     {
       "id": 18,
       "name": "王姐米线",
-      "category": "米线",
+      "category": "面食",
       "rating": 4.3,
       "deliveryTime": 40,
       "deliveryFee": 3,
@@ -1588,12 +1844,13 @@ const allData = {
           "description": "云南经典，鸡汤底，配菜丰富",
           "monthlySales": 1658
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 19,
-      "name": "馋得慌米线",
-      "category": "米线",
+      "name": "馋嘴米线坊",
+      "category": "面食",
       "rating": 4.3,
       "deliveryTime": 45,
       "deliveryFee": 6,
@@ -1669,7 +1926,8 @@ const allData = {
           "description": "酸辣开胃，粉丝爽滑",
           "monthlySales": 1412
         }
-      ]
+      ],
+      "icon": "🟡"
     },
     {
       "id": 20,
@@ -1743,11 +2001,12 @@ const allData = {
           "description": "泰国金枕榴莲，芝士拉丝",
           "monthlySales": 872
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 21,
-      "name": "扶墙出披萨",
+      "name": "回味披萨屋",
       "category": "披萨",
       "rating": 4.6,
       "deliveryTime": 40,
@@ -1817,11 +2076,12 @@ const allData = {
           "description": "泰国金枕榴莲，芝士拉丝",
           "monthlySales": 940
         }
-      ]
+      ],
+      "icon": "🍕"
     },
     {
       "id": 22,
-      "name": "半夜披萨屋",
+      "name": "深夜披萨工坊",
       "category": "披萨",
       "rating": 3.8,
       "deliveryTime": 45,
@@ -1891,11 +2151,12 @@ const allData = {
           "description": "虾仁鱿鱼，鲜味十足",
           "monthlySales": 759
         }
-      ]
+      ],
+      "icon": "🍕"
     },
     {
       "id": 23,
-      "name": "馋哭了炸鸡",
+      "name": "馋嘴炸鸡",
       "category": "炸鸡",
       "rating": 4.5,
       "deliveryTime": 35,
@@ -1972,11 +2233,12 @@ const allData = {
           "description": "奥尔良腌料，皮脆肉嫩",
           "monthlySales": 1590
         }
-      ]
+      ],
+      "icon": "🍗"
     },
     {
       "id": 24,
-      "name": "凌晨三点炸鸡",
+      "name": "深夜炸鸡铺",
       "category": "炸鸡",
       "rating": 4.7,
       "deliveryTime": 50,
@@ -2053,11 +2315,12 @@ const allData = {
           "description": "蒜香浓郁，金黄酥脆",
           "monthlySales": 1205
         }
-      ]
+      ],
+      "icon": "🍗"
     },
     {
       "id": 25,
-      "name": "甜到齁甜品",
+      "name": "甜蜜时光甜品",
       "category": "甜品",
       "rating": 4.9,
       "deliveryTime": 25,
@@ -2134,7 +2397,8 @@ const allData = {
           "description": "新鲜芒果，层层奶油",
           "monthlySales": 1038
         }
-      ]
+      ],
+      "icon": "🍰"
     },
     {
       "id": 26,
@@ -2215,11 +2479,12 @@ const allData = {
           "description": "意式经典，咖啡酒香",
           "monthlySales": 1052
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 27,
-      "name": "半夜吃冰",
+      "name": "深夜冰品屋",
       "category": "甜品",
       "rating": 4.8,
       "deliveryTime": 45,
@@ -2296,11 +2561,12 @@ const allData = {
           "description": "椰香浓郁，西米Q弹",
           "monthlySales": 1297
         }
-      ]
+      ],
+      "icon": "🍰"
     },
     {
       "id": 28,
-      "name": "胖姐烘焙",
+      "name": "阿姐烘焙坊",
       "category": "甜品",
       "rating": 4.4,
       "deliveryTime": 40,
@@ -2377,11 +2643,12 @@ const allData = {
           "description": "纽约芝士，浓郁顺滑",
           "monthlySales": 944
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 29,
-      "name": "喝到撑奶茶",
+      "name": "畅饮奶茶铺",
       "category": "奶茶",
       "rating": 4.8,
       "deliveryTime": 25,
@@ -2458,11 +2725,12 @@ const allData = {
           "description": "嫩滑布丁，奶香浓郁",
           "monthlySales": 1206
         }
-      ]
+      ],
+      "icon": "🧋"
     },
     {
       "id": 30,
-      "name": "凌晨三点茶",
+      "name": "深夜茶饮",
       "category": "奶茶",
       "rating": 3.8,
       "deliveryTime": 40,
@@ -2525,7 +2793,8 @@ const allData = {
           "description": "嫩滑布丁，奶香浓郁",
           "monthlySales": 1064
         }
-      ]
+      ],
+      "icon": "🧋"
     },
     {
       "id": 31,
@@ -2606,11 +2875,12 @@ const allData = {
           "description": "嫩滑布丁，奶香浓郁",
           "monthlySales": 1181
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 32,
-      "name": "渴得慌茶饮",
+      "name": "畅饮茶社",
       "category": "奶茶",
       "rating": 4,
       "deliveryTime": 35,
@@ -2673,7 +2943,8 @@ const allData = {
           "description": "多种水果，维C满满",
           "monthlySales": 1124
         }
-      ]
+      ],
+      "icon": "🎪"
     },
     {
       "id": 33,
@@ -2740,11 +3011,12 @@ const allData = {
           "description": "陕西名吃，腊汁肉香",
           "monthlySales": 1993
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 34,
-      "name": "辣到哭鸭脖",
+      "name": "火辣鸭脖铺",
       "category": "小吃",
       "rating": 4.3,
       "deliveryTime": 35,
@@ -2821,11 +3093,12 @@ const allData = {
           "description": "灌入鸡蛋，营养美味",
           "monthlySales": 1573
         }
-      ]
+      ],
+      "icon": "🥟"
     },
     {
       "id": 35,
-      "name": "半夜鸭货",
+      "name": "深夜鸭货铺",
       "category": "小吃",
       "rating": 4.5,
       "deliveryTime": 40,
@@ -2902,11 +3175,12 @@ const allData = {
           "description": "长沙特色，外酥里嫩",
           "monthlySales": 1674
         }
-      ]
+      ],
+      "icon": "🥟"
     },
     {
       "id": 36,
-      "name": "瘦不了轻食",
+      "name": "轻盈轻食馆",
       "category": "轻食",
       "rating": 4.4,
       "deliveryTime": 45,
@@ -2976,11 +3250,12 @@ const allData = {
           "description": "低温慢煮，低脂高蛋白",
           "monthlySales": 1028
         }
-      ]
+      ],
+      "icon": "🥗"
     },
     {
       "id": 37,
-      "name": "凌晨三点沙拉",
+      "name": "深夜沙拉屋",
       "category": "轻食",
       "rating": 4.3,
       "deliveryTime": 35,
@@ -3057,7 +3332,8 @@ const allData = {
           "description": "罗马生菜，帕尔马干酪",
           "monthlySales": 828
         }
-      ]
+      ],
+      "icon": "🥗"
     },
     {
       "id": 38,
@@ -3124,11 +3400,12 @@ const allData = {
           "description": "咸蛋黄包裹，沙沙口感",
           "monthlySales": 982
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 39,
-      "name": "撑死小龙虾",
+      "name": "霸气小龙虾",
       "category": "小龙虾",
       "rating": 4.8,
       "deliveryTime": 25,
@@ -3198,11 +3475,12 @@ const allData = {
           "description": "油焖入味，虾肉饱满",
           "monthlySales": 1367
         }
-      ]
+      ],
+      "icon": "🦞"
     },
     {
       "id": 40,
-      "name": "半夜龙虾局",
+      "name": "深夜龙虾局",
       "category": "小龙虾",
       "rating": 4.9,
       "deliveryTime": 30,
@@ -3279,11 +3557,12 @@ const allData = {
           "description": "龙虾汤汁，面条入味",
           "monthlySales": 1208
         }
-      ]
+      ],
+      "icon": "🦞"
     },
     {
       "id": 41,
-      "name": "辣到哭龙虾",
+      "name": "火辣龙虾馆",
       "category": "小龙虾",
       "rating": 4.9,
       "deliveryTime": 35,
@@ -3353,11 +3632,12 @@ const allData = {
           "description": "蒜蓉金汤，蒜香浓郁",
           "monthlySales": 1889
         }
-      ]
+      ],
+      "icon": "🔸"
     },
     {
       "id": 42,
-      "name": "辣到哭川菜",
+      "name": "火辣川菜馆",
       "category": "川菜",
       "rating": 3.9,
       "deliveryTime": 45,
@@ -3427,11 +3707,12 @@ const allData = {
           "description": "荔枝味型，花生酥脆",
           "monthlySales": 2381
         }
-      ]
+      ],
+      "icon": "🌶️"
     },
     {
       "id": 43,
-      "name": "凌晨三点江湖菜",
+      "name": "深夜江湖菜",
       "category": "川菜",
       "rating": 3.9,
       "deliveryTime": 40,
@@ -3508,7 +3789,8 @@ const allData = {
           "description": "干煸入味，微辣下饭",
           "monthlySales": 1180
         }
-      ]
+      ],
+      "icon": "🌶️"
     },
     {
       "id": 44,
@@ -3589,11 +3871,12 @@ const allData = {
           "description": "豆豉提味，排骨酥烂",
           "monthlySales": 947
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 45,
-      "name": "吃到撑茶点",
+      "name": "好味茶点居",
       "category": "粤菜",
       "rating": 4.3,
       "deliveryTime": 50,
@@ -3670,11 +3953,12 @@ const allData = {
           "description": "虎皮凤爪，软糯入味",
           "monthlySales": 1393
         }
-      ]
+      ],
+      "icon": "🧋"
     },
     {
       "id": 46,
-      "name": "半夜饮茶",
+      "name": "深夜茶楼",
       "category": "粤菜",
       "rating": 4.1,
       "deliveryTime": 40,
@@ -3751,7 +4035,8 @@ const allData = {
           "description": "水晶皮，整只虾仁",
           "monthlySales": 1759
         }
-      ]
+      ],
+      "icon": "🧋"
     },
     {
       "id": 47,
@@ -3818,11 +4103,12 @@ const allData = {
           "description": "豆豉提味，排骨酥烂",
           "monthlySales": 1247
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 48,
-      "name": "辣到哭湘菜",
+      "name": "火辣湘菜馆",
       "category": "湘菜",
       "rating": 4.4,
       "deliveryTime": 50,
@@ -3892,11 +4178,12 @@ const allData = {
           "description": "腌制蔬菜，咸香下饭",
           "monthlySales": 903
         }
-      ]
+      ],
+      "icon": "🌶️"
     },
     {
       "id": 49,
-      "name": "凌晨三点小炒",
+      "name": "深夜小炒馆",
       "category": "湘菜",
       "rating": 4.8,
       "deliveryTime": 25,
@@ -3973,11 +4260,12 @@ const allData = {
           "description": "腊肉腊肠，湘味十足",
           "monthlySales": 663
         }
-      ]
+      ],
+      "icon": "🔥"
     },
     {
       "id": 50,
-      "name": "胖姐湘菜",
+      "name": "阿姐湘菜馆",
       "category": "湘菜",
       "rating": 4.2,
       "deliveryTime": 30,
@@ -4054,11 +4342,12 @@ const allData = {
           "description": "肥而不腻，甜咸适中",
           "monthlySales": 1075
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 51,
-      "name": "饿得慌湘味",
+      "name": "馋嘴湘味馆",
       "category": "湘菜",
       "rating": 5,
       "deliveryTime": 35,
@@ -4135,11 +4424,12 @@ const allData = {
           "description": "五花肉青椒，家常味道",
           "monthlySales": 1692
         }
-      ]
+      ],
+      "icon": "🔥"
     },
     {
       "id": 52,
-      "name": "吃到撑东北菜",
+      "name": "好味东北馆",
       "category": "东北菜",
       "rating": 4,
       "deliveryTime": 45,
@@ -4202,11 +4492,12 @@ const allData = {
           "description": "外酥里嫩，咸鲜口味",
           "monthlySales": 1147
         }
-      ]
+      ],
+      "icon": "🥘"
     },
     {
       "id": 53,
-      "name": "半夜饺子馆",
+      "name": "深夜饺子王",
       "category": "东北菜",
       "rating": 4.5,
       "deliveryTime": 50,
@@ -4283,7 +4574,8 @@ const allData = {
           "description": "拉皮黄瓜，麻酱拌制",
           "monthlySales": 1050
         }
-      ]
+      ],
+      "icon": "🍜"
     },
     {
       "id": 54,
@@ -4350,11 +4642,12 @@ const allData = {
           "description": "外酥里嫩，酸甜适口",
           "monthlySales": 1792
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 55,
-      "name": "撑死大丰收",
+      "name": "霸气大丰收",
       "category": "东北菜",
       "rating": 4,
       "deliveryTime": 30,
@@ -4431,11 +4724,12 @@ const allData = {
           "description": "糯米红豆，软糯香甜",
           "monthlySales": 502
         }
-      ]
+      ],
+      "icon": "🥘"
     },
     {
       "id": 56,
-      "name": "半夜西北面",
+      "name": "深夜西北面馆",
       "category": "西北菜",
       "rating": 4,
       "deliveryTime": 35,
@@ -4512,7 +4806,8 @@ const allData = {
           "description": "陕西凉皮，酸辣爽口",
           "monthlySales": 2332
         }
-      ]
+      ],
+      "icon": "🍜"
     },
     {
       "id": 57,
@@ -4593,11 +4888,12 @@ const allData = {
           "description": "羊杂熬制，汤白味鲜",
           "monthlySales": 556
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 58,
-      "name": "辣到哭西北菜",
+      "name": "火辣西北馆",
       "category": "西北菜",
       "rating": 4.8,
       "deliveryTime": 40,
@@ -4674,11 +4970,12 @@ const allData = {
           "description": "宽如腰带，油泼辣子",
           "monthlySales": 1582
         }
-      ]
+      ],
+      "icon": "🌶️"
     },
     {
       "id": 59,
-      "name": "凌晨三点西北味",
+      "name": "深夜西北味",
       "category": "西北菜",
       "rating": 3.8,
       "deliveryTime": 25,
@@ -4741,12 +5038,13 @@ const allData = {
           "description": "陕西凉皮，酸辣爽口",
           "monthlySales": 2103
         }
-      ]
+      ],
+      "icon": "🐑"
     },
     {
       "id": 60,
-      "name": "馋哭了云南菜",
-      "category": "云南菜",
+      "name": "馋嘴云南味",
+      "category": "川菜",
       "rating": 4.7,
       "deliveryTime": 25,
       "deliveryFee": 5,
@@ -4822,12 +5120,13 @@ const allData = {
           "description": "多种菌菇，鲜美养生",
           "monthlySales": 440
         }
-      ]
+      ],
+      "icon": "🍽️"
     },
     {
       "id": 61,
-      "name": "半夜云南味",
-      "category": "云南菜",
+      "name": "深夜云南馆",
+      "category": "川菜",
       "rating": 4.3,
       "deliveryTime": 30,
       "deliveryFee": 8,
@@ -4903,12 +5202,13 @@ const allData = {
           "description": "鸡汤底，配菜丰富",
           "monthlySales": 2147
         }
-      ]
+      ],
+      "icon": "🍽️"
     },
     {
       "id": 62,
       "name": "巴郎新疆味",
-      "category": "新疆菜",
+      "category": "西北菜",
       "rating": 4.9,
       "deliveryTime": 30,
       "deliveryFee": 8,
@@ -4970,12 +5270,13 @@ const allData = {
           "description": "手工拉面，劲道爽滑",
           "monthlySales": 803
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 63,
-      "name": "撑死大盘鸡",
-      "category": "新疆菜",
+      "name": "霸气大盘鸡",
+      "category": "西北菜",
       "rating": 4.2,
       "deliveryTime": 35,
       "deliveryFee": 3,
@@ -5037,12 +5338,13 @@ const allData = {
           "description": "羊肉洋葱，外皮酥脆",
           "monthlySales": 1649
         }
-      ]
+      ],
+      "icon": "🐑"
     },
     {
       "id": 64,
-      "name": "凌晨三点闽南味",
-      "category": "闽南菜",
+      "name": "深夜闽南馆",
+      "category": "江浙菜",
       "rating": 4.6,
       "deliveryTime": 50,
       "deliveryFee": 0,
@@ -5118,12 +5420,13 @@ const allData = {
           "description": "老姜母鸭，温补养生",
           "monthlySales": 894
         }
-      ]
+      ],
+      "icon": "🦀"
     },
     {
       "id": 65,
       "name": "阿妹厦门小吃",
-      "category": "闽南菜",
+      "category": "江浙菜",
       "rating": 3.9,
       "deliveryTime": 35,
       "deliveryFee": 0,
@@ -5199,12 +5502,13 @@ const allData = {
           "description": "五香卷，外酥里嫩",
           "monthlySales": 970
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 66,
       "name": "**闽中小吃**",
-      "category": "闽南菜",
+      "category": "江浙菜",
       "rating": 4.2,
       "deliveryTime": 45,
       "deliveryFee": 0,
@@ -5280,11 +5584,12 @@ const allData = {
           "description": "厦门特色，Q弹爽口",
           "monthlySales": 647
         }
-      ]
+      ],
+      "icon": "🥟"
     },
     {
       "id": 67,
-      "name": "胖外婆江浙菜",
+      "name": "阿婆江浙味",
       "category": "江浙菜",
       "rating": 4.8,
       "deliveryTime": 50,
@@ -5361,11 +5666,12 @@ const allData = {
           "description": "花雕醉制，鲜甜酒香",
           "monthlySales": 322
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 68,
-      "name": "吃到撑绿茶",
+      "name": "好味绿茶馆",
       "category": "江浙菜",
       "rating": 3.9,
       "deliveryTime": 35,
@@ -5435,11 +5741,12 @@ const allData = {
           "description": "糯米莲藕，桂花飘香",
           "monthlySales": 740
         }
-      ]
+      ],
+      "icon": "🧋"
     },
     {
       "id": 69,
-      "name": "半夜鲁味",
+      "name": "深夜鲁味馆",
       "category": "鲁菜",
       "rating": 4.4,
       "deliveryTime": 25,
@@ -5516,7 +5823,8 @@ const allData = {
           "description": "四个大肉丸，寓意吉祥",
           "monthlySales": 601
         }
-      ]
+      ],
+      "icon": "🐟"
     },
     {
       "id": 70,
@@ -5583,11 +5891,12 @@ const allData = {
           "description": "山东大馒头，麦香浓郁",
           "monthlySales": 1272
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 71,
-      "name": "撑死鲁宴",
+      "name": "霸气鲁宴",
       "category": "鲁菜",
       "rating": 4.4,
       "deliveryTime": 45,
@@ -5650,12 +5959,13 @@ const allData = {
           "description": "糟香提味，鱼片嫩滑",
           "monthlySales": 617
         }
-      ]
+      ],
+      "icon": "🐟"
     },
     {
       "id": 72,
-      "name": "半夜鸭脖铺",
-      "category": "湖北菜",
+      "name": "深夜鸭脖王",
+      "category": "湘菜",
       "rating": 4,
       "deliveryTime": 50,
       "deliveryFee": 3,
@@ -5731,12 +6041,13 @@ const allData = {
           "description": "武汉特色，外酥里嫩",
           "monthlySales": 1235
         }
-      ]
+      ],
+      "icon": "🥟"
     },
     {
       "id": 73,
-      "name": "凌晨三点热干面",
-      "category": "湖北菜",
+      "name": "深夜热干面",
+      "category": "湘菜",
       "rating": 4.9,
       "deliveryTime": 35,
       "deliveryFee": 8,
@@ -5812,12 +6123,13 @@ const allData = {
           "description": "糯米芝麻，外酥里糯",
           "monthlySales": 1095
         }
-      ]
+      ],
+      "icon": "🍜"
     },
     {
       "id": 74,
       "name": "拐子湖北味",
-      "category": "湖北菜",
+      "category": "湘菜",
       "rating": 4.8,
       "deliveryTime": 35,
       "deliveryFee": 0,
@@ -5879,12 +6191,13 @@ const allData = {
           "description": "洪湖莲藕，粉糯汤鲜",
           "monthlySales": 1226
         }
-      ]
+      ],
+      "icon": "👨"
     },
     {
       "id": 75,
-      "name": "半夜烤鸭",
-      "category": "北京菜",
+      "name": "深夜烤鸭坊",
+      "category": "鲁菜",
       "rating": 3.9,
       "deliveryTime": 40,
       "deliveryFee": 5,
@@ -5946,12 +6259,13 @@ const allData = {
           "description": "糯米馅料，软糯香甜",
           "monthlySales": 419
         }
-      ]
+      ],
+      "icon": "🔥"
     },
     {
       "id": 76,
-      "name": "吃到撑烤鸭",
-      "category": "北京菜",
+      "name": "好味烤鸭坊",
+      "category": "鲁菜",
       "rating": 4.9,
       "deliveryTime": 30,
       "deliveryFee": 6,
@@ -6013,12 +6327,13 @@ const allData = {
           "description": "老北京炸酱，黄瓜丝配面",
           "monthlySales": 1657
         }
-      ]
+      ],
+      "icon": "🔥"
     },
     {
       "id": 77,
       "name": "阿兄潮汕锅",
-      "category": "潮汕菜",
+      "category": "粤菜",
       "rating": 4,
       "deliveryTime": 40,
       "deliveryFee": 5,
@@ -6080,12 +6395,13 @@ const allData = {
           "description": "海蛎鸡蛋，外酥里嫩",
           "monthlySales": 1085
         }
-      ]
+      ],
+      "icon": "✨"
     },
     {
       "id": 78,
-      "name": "凌晨三点砂锅粥",
-      "category": "潮汕菜",
+      "name": "深夜砂锅粥",
+      "category": "粤菜",
       "rating": 4.1,
       "deliveryTime": 35,
       "deliveryFee": 5,
@@ -6161,12 +6477,13 @@ const allData = {
           "description": "潮汕粿条，汤鲜味美",
           "monthlySales": 1287
         }
-      ]
+      ],
+      "icon": "🥢"
     },
     {
       "id": 79,
-      "name": "馋哭了潮汕味",
-      "category": "潮汕菜",
+      "name": "馋嘴潮汕馆",
+      "category": "粤菜",
       "rating": 4.4,
       "deliveryTime": 50,
       "deliveryFee": 3,
@@ -6242,12 +6559,13 @@ const allData = {
           "description": "糯米汤圆，甜汤配食",
           "monthlySales": 428
         }
-      ]
+      ],
+      "icon": "🥢"
     },
     {
       "id": 80,
-      "name": "半夜椰子鸡",
-      "category": "海南菜",
+      "name": "深夜椰子鸡",
+      "category": "粤菜",
       "rating": 4,
       "deliveryTime": 40,
       "deliveryFee": 6,
@@ -6323,12 +6641,13 @@ const allData = {
           "description": "琼海加积，肥而不腻",
           "monthlySales": 595
         }
-      ]
+      ],
+      "icon": "🎨"
     },
     {
       "id": 81,
       "name": "阿公嫩鸡",
-      "category": "海南菜",
+      "category": "粤菜",
       "rating": 4.3,
       "deliveryTime": 40,
       "deliveryFee": 6,
@@ -6404,12 +6723,13 @@ const allData = {
           "description": "糯米椰子，椰香浓郁",
           "monthlySales": 816
         }
-      ]
+      ],
+      "icon": "🎪"
     },
     {
       "id": 82,
-      "name": "吃到撑海南味",
-      "category": "海南菜",
+      "name": "好味海南馆",
+      "category": "粤菜",
       "rating": 4.8,
       "deliveryTime": 40,
       "deliveryFee": 8,
@@ -6478,12 +6798,13 @@ const allData = {
           "description": "海南特色，配料丰富",
           "monthlySales": 1364
         }
-      ]
+      ],
+      "icon": "🎨"
     },
     {
       "id": 83,
-      "name": "辣到哭贵州菜",
-      "category": "贵州菜",
+      "name": "火辣贵州馆",
+      "category": "川菜",
       "rating": 4.2,
       "deliveryTime": 30,
       "deliveryFee": 8,
@@ -6559,12 +6880,13 @@ const allData = {
           "description": "遵义羊肉粉，汤鲜味美",
           "monthlySales": 1262
         }
-      ]
+      ],
+      "icon": "✨"
     },
     {
       "id": 84,
-      "name": "凌晨三点黔味",
-      "category": "贵州菜",
+      "name": "深夜黔味馆",
+      "category": "川菜",
       "rating": 4,
       "deliveryTime": 40,
       "deliveryFee": 0,
@@ -6640,11 +6962,12 @@ const allData = {
           "description": "贵阳小吃，外酥里嫩",
           "monthlySales": 945
         }
-      ]
+      ],
+      "icon": "🔸"
     },
     {
       "id": 85,
-      "name": "半夜泰味",
+      "name": "深夜泰味馆",
       "category": "泰国菜",
       "rating": 4.8,
       "deliveryTime": 35,
@@ -6714,11 +7037,12 @@ const allData = {
           "description": "酸辣虾汤，香茅提味",
           "monthlySales": 1389
         }
-      ]
+      ],
+      "icon": "🍛"
     },
     {
       "id": 86,
-      "name": "馋哭了泰料",
+      "name": "馋嘴泰料馆",
       "category": "泰国菜",
       "rating": 4.8,
       "deliveryTime": 30,
@@ -6795,12 +7119,13 @@ const allData = {
           "description": "青木瓜丝，酸辣爽口",
           "monthlySales": 975
         }
-      ]
+      ],
+      "icon": "🍛"
     },
     {
       "id": 87,
       "name": "阿Sir港味",
-      "category": "港式",
+      "category": "粤菜",
       "rating": 4,
       "deliveryTime": 50,
       "deliveryFee": 8,
@@ -6869,12 +7194,13 @@ const allData = {
           "description": "蜜汁叉烧，饭香肉嫩",
           "monthlySales": 1449
         }
-      ]
+      ],
+      "icon": "🔸"
     },
     {
       "id": 88,
-      "name": "吃到撑港式",
-      "category": "港式",
+      "name": "好味港式馆",
+      "category": "粤菜",
       "rating": 3.8,
       "deliveryTime": 45,
       "deliveryFee": 8,
@@ -6936,12 +7262,13 @@ const allData = {
           "description": "咖喱浓郁，鱼蛋Q弹",
           "monthlySales": 1635
         }
-      ]
+      ],
+      "icon": "🍽️"
     },
     {
       "id": 89,
-      "name": "凌晨三点茶餐厅",
-      "category": "港式",
+      "name": "深夜茶餐厅",
+      "category": "粤菜",
       "rating": 4.5,
       "deliveryTime": 50,
       "deliveryFee": 3,
@@ -7003,12 +7330,13 @@ const allData = {
           "description": "芒果西柚，港式甜品",
           "monthlySales": 1554
         }
-      ]
+      ],
+      "icon": "💫"
     },
     {
       "id": 90,
       "name": "老街麻辣烫",
-      "category": "麻辣烫",
+      "category": "小吃",
       "rating": 4.5,
       "deliveryTime": 30,
       "deliveryFee": 3,
@@ -7119,12 +7447,13 @@ const allData = {
           "description": "红薯宽粉，软糯Q弹",
           "monthlySales": 2345
         }
-      ]
+      ],
+      "icon": "🌶️"
     },
     {
       "id": 91,
-      "name": "辣到哭麻辣烫",
-      "category": "麻辣烫",
+      "name": "火辣麻辣烫",
+      "category": "小吃",
       "rating": 4.8,
       "deliveryTime": 25,
       "deliveryFee": 0,
@@ -7235,12 +7564,13 @@ const allData = {
           "description": "炸油条，吸汁神器",
           "monthlySales": 1987
         }
-      ]
+      ],
+      "icon": "🌶️"
     },
     {
       "id": 92,
       "name": "阿香麻辣烫",
-      "category": "麻辣烫",
+      "category": "小吃",
       "rating": 4.3,
       "deliveryTime": 35,
       "deliveryFee": 5,
@@ -7351,12 +7681,13 @@ const allData = {
           "description": "炸鸡蛋，吸汁入味",
           "monthlySales": 1987
         }
-      ]
+      ],
+      "icon": "🔸"
     },
     {
       "id": 93,
       "name": "柳州螺蛳粉",
-      "category": "螺蛳粉",
+      "category": "面食",
       "rating": 4.9,
       "deliveryTime": 30,
       "deliveryFee": 3,
@@ -7467,12 +7798,13 @@ const allData = {
           "description": "时令青菜，清爽解腻",
           "monthlySales": 2100
         }
-      ]
+      ],
+      "icon": "🌟"
     },
     {
       "id": 94,
       "name": "阿妹螺蛳粉",
-      "category": "螺蛳粉",
+      "category": "面食",
       "rating": 4.7,
       "deliveryTime": 25,
       "deliveryFee": 5,
@@ -7583,12 +7915,13 @@ const allData = {
           "description": "时令青菜，新鲜脆嫩",
           "monthlySales": 1876
         }
-      ]
+      ],
+      "icon": "🟣"
     },
     {
       "id": 95,
       "name": "酸爽螺蛳粉",
-      "category": "螺蛳粉",
+      "category": "面食",
       "rating": 4.4,
       "deliveryTime": 35,
       "deliveryFee": 0,
@@ -7699,12 +8032,13 @@ const allData = {
           "description": "豆腐皮软韧，吸汁入味",
           "monthlySales": 1876
         }
-      ]
+      ],
+      "icon": "🔸"
     },
     {
       "id": 96,
       "name": "重庆小面馆",
-      "category": "重庆小面",
+      "category": "面食",
       "rating": 4.7,
       "deliveryTime": 25,
       "deliveryFee": 3,
@@ -7815,12 +8149,13 @@ const allData = {
           "description": "经典小面，麻辣鲜香",
           "monthlySales": 2987
         }
-      ]
+      ],
+      "icon": "⚡"
     },
     {
       "id": 97,
-      "name": "辣到哭小面",
-      "category": "重庆小面",
+      "name": "火辣小面馆",
+      "category": "面食",
       "rating": 4.9,
       "deliveryTime": 20,
       "deliveryFee": 5,
@@ -7931,12 +8266,13 @@ const allData = {
           "description": "酸菜肉丝，爽口开胃",
           "monthlySales": 1876
         }
-      ]
+      ],
+      "icon": "✨"
     },
     {
       "id": 98,
       "name": "山城味道",
-      "category": "重庆小面",
+      "category": "面食",
       "rating": 4.3,
       "deliveryTime": 30,
       "deliveryFee": 0,
@@ -8047,12 +8383,13 @@ const allData = {
           "description": "经典小面，麻辣鲜香",
           "monthlySales": 2876
         }
-      ]
+      ],
+      "icon": "🍽️"
     },
     {
       "id": 99,
       "name": "麻辣香锅坊",
-      "category": "麻辣香锅",
+      "category": "川菜",
       "rating": 4.8,
       "deliveryTime": 30,
       "deliveryFee": 5,
@@ -8163,12 +8500,13 @@ const allData = {
           "description": "年糕软糯，外焦里嫩",
           "monthlySales": 1765
         }
-      ]
+      ],
+      "icon": "🟠"
     },
     {
       "id": 100,
       "name": "干锅王麻辣香锅",
-      "category": "麻辣香锅",
+      "category": "川菜",
       "rating": 4.6,
       "deliveryTime": 35,
       "deliveryFee": 3,
@@ -8279,12 +8617,13 @@ const allData = {
           "description": "方便面吸汁，香锅底料",
           "monthlySales": 2345
         }
-      ]
+      ],
+      "icon": "🎨"
     },
     {
       "id": 101,
       "name": "香辣诱惑",
-      "category": "麻辣香锅",
+      "category": "川菜",
       "rating": 4.4,
       "deliveryTime": 25,
       "deliveryFee": 6,
@@ -8395,12 +8734,13 @@ const allData = {
           "description": "小麻花酥脆，口感独特",
           "monthlySales": 1654
         }
-      ]
+      ],
+      "icon": "🟢"
     },
     {
       "id": 102,
       "name": "黄焖鸡米饭",
-      "category": "黄焖鸡",
+      "category": "鲁菜",
       "rating": 4.7,
       "deliveryTime": 25,
       "deliveryFee": 3,
@@ -8511,12 +8851,13 @@ const allData = {
           "description": "东北大米，配菜佳品",
           "monthlySales": 2876
         }
-      ]
+      ],
+      "icon": "🔵"
     },
     {
       "id": 103,
       "name": "阿福黄焖鸡",
-      "category": "黄焖鸡",
+      "category": "鲁菜",
       "rating": 4.5,
       "deliveryTime": 30,
       "deliveryFee": 5,
@@ -8627,12 +8968,13 @@ const allData = {
           "description": "精品米饭，配菜绝配",
           "monthlySales": 2654
         }
-      ]
+      ],
+      "icon": "🎨"
     },
     {
       "id": 104,
       "name": "饺子大王",
-      "category": "饺子馄饨",
+      "category": "面食",
       "rating": 4.8,
       "deliveryTime": 25,
       "deliveryFee": 3,
@@ -8743,12 +9085,13 @@ const allData = {
           "description": "皮薄馅嫩，汤鲜味美",
           "monthlySales": 2100
         }
-      ]
+      ],
+      "icon": "🎨"
     },
     {
       "id": 105,
       "name": "老字号饺子馆",
-      "category": "饺子馄饨",
+      "category": "面食",
       "rating": 4.6,
       "deliveryTime": 30,
       "deliveryFee": 5,
@@ -8859,12 +9202,13 @@ const allData = {
           "description": "鲜肉小馄饨，汤鲜味美",
           "monthlySales": 1987
         }
-      ]
+      ],
+      "icon": "🟡"
     },
     {
       "id": 106,
       "name": "粥粥粉面铺",
-      "category": "粥粉面",
+      "category": "面食",
       "rating": 4.5,
       "deliveryTime": 25,
       "deliveryFee": 3,
@@ -8975,12 +9319,13 @@ const allData = {
           "description": "虾仁鱿鱼，海鲜风味",
           "monthlySales": 1543
         }
-      ]
+      ],
+      "icon": "🎪"
     },
     {
       "id": 107,
       "name": "潮汕砂锅粥",
-      "category": "粥粉面",
+      "category": "面食",
       "rating": 4.9,
       "deliveryTime": 30,
       "deliveryFee": 5,
@@ -9091,12 +9436,13 @@ const allData = {
           "description": "蚝油鲜甜，面条爽滑",
           "monthlySales": 1543
         }
-      ]
+      ],
+      "icon": "🥢"
     },
     {
       "id": 108,
       "name": "烤鱼达人",
-      "category": "烤鱼",
+      "category": "川菜",
       "rating": 4.8,
       "deliveryTime": 35,
       "deliveryFee": 6,
@@ -9207,12 +9553,13 @@ const allData = {
           "description": "年糕软糯，外焦里嫩",
           "monthlySales": 1765
         }
-      ]
+      ],
+      "icon": "🔥"
     },
     {
       "id": 109,
       "name": "碳火烤鱼",
-      "category": "烤鱼",
+      "category": "川菜",
       "rating": 4.6,
       "deliveryTime": 40,
       "deliveryFee": 5,
@@ -9323,12 +9670,13 @@ const allData = {
           "description": "手擀面筋道，吸汁入味",
           "monthlySales": 1543
         }
-      ]
+      ],
+      "icon": "🔥"
     },
     {
       "id": 110,
       "name": "酸菜鱼馆",
-      "category": "酸菜鱼",
+      "category": "川菜",
       "rating": 4.9,
       "deliveryTime": 30,
       "deliveryFee": 5,
@@ -9439,12 +9787,13 @@ const allData = {
           "description": "豆腐嫩滑，吸汁入味",
           "monthlySales": 1432
         }
-      ]
+      ],
+      "icon": "🔸"
     },
     {
       "id": 111,
       "name": "老坛酸菜鱼",
-      "category": "酸菜鱼",
+      "category": "川菜",
       "rating": 4.7,
       "deliveryTime": 25,
       "deliveryFee": 3,
@@ -9555,239 +9904,284 @@ const allData = {
           "description": "青笋脆嫩，清甜解腻",
           "monthlySales": 1321
         }
-      ]
+      ],
+      "icon": "🎯"
     },
     {
       "id": 112,
       "name": "串串香火锅",
-      "category": "串串香",
+      "category": "火锅",
       "rating": 4.8,
       "deliveryTime": 30,
       "deliveryFee": 3,
       "minPrice": 25,
       "dishes": [
         {
-          "name": "牛肉串",
-          "price": 3,
-          "emoji": "🥩",
-          "description": "鲜嫩牛肉，麻辣串串必点",
+          "name": "红油串串锅底",
+          "price": 25,
+          "emoji": "🌶️",
+          "description": "成都风味，麻辣鲜香，串串灵魂汤底",
           "monthlySales": 3456
         },
         {
-          "name": "毛肚串",
+          "name": "香菜牛肉串",
           "price": 4,
-          "emoji": "🐂",
-          "description": "脆嫩毛肚，爽口弹牙",
-          "monthlySales": 2987
+          "emoji": "🥩",
+          "description": "鲜嫩牛肉裹香菜，绝配搭档",
+          "monthlySales": 4123
         },
         {
-          "name": "鸭肠串",
-          "price": 3,
-          "emoji": "🦆",
-          "description": "鸭肠爽脆，嚼劲十足",
-          "monthlySales": 2654
+          "name": "泡椒牛肉串",
+          "price": 4,
+          "emoji": "🥩",
+          "description": "牛肉包野山椒，酸辣爆汁",
+          "monthlySales": 3876
         },
         {
-          "name": "虾滑串",
-          "price": 5,
-          "emoji": "🦐",
-          "description": "手工虾滑，鲜嫩弹牙",
+          "name": "折耳根牛肉串",
+          "price": 4,
+          "emoji": "🥩",
+          "description": "牛肉裹折耳根，清香独特",
           "monthlySales": 2345
         },
         {
-          "name": "郡肝串",
+          "name": "小郡肝串",
           "price": 3,
           "emoji": "🐔",
-          "description": "鸡郡干香，口感脆嫩",
+          "description": "鸡胗切花，脆嫩有嚼劲",
+          "monthlySales": 3987
+        },
+        {
+          "name": "兔腰串",
+          "price": 3,
+          "emoji": "🐇",
+          "description": "小兔腰，绵密细腻，一口一个",
+          "monthlySales": 2654
+        },
+        {
+          "name": "肥肠结子串",
+          "price": 4,
+          "emoji": "🌭",
+          "description": "卤肥肠打成结，煮透后软糯入味",
+          "monthlySales": 2987
+        },
+        {
+          "name": "排骨串",
+          "price": 4,
+          "emoji": "🍖",
+          "description": "小排腌制，越煮越香，啃骨头的快乐",
           "monthlySales": 2100
         },
         {
-          "name": "五花肉串",
+          "name": "鸡脚筋串",
           "price": 3,
-          "emoji": "🥓",
-          "description": "五花肉片，肥瘦相间",
-          "monthlySales": 1987
-        },
-        {
-          "name": "鱼丸串",
-          "price": 2,
-          "emoji": "🐟",
-          "description": "手工鱼丸，鲜嫩弹牙",
+          "emoji": "🐔",
+          "description": "鸡脚筋Q弹脆爽，胶质满满",
           "monthlySales": 1876
         },
         {
-          "name": "土豆串",
+          "name": "鱿鱼串",
+          "price": 3,
+          "emoji": "🦑",
+          "description": "鱿鱼须串，煮后Q弹有嚼劲",
+          "monthlySales": 2345
+        },
+        {
+          "name": "郡把串",
+          "price": 3,
+          "emoji": "🐔",
+          "description": "鸭胗带肉部分，又脆又嫩",
+          "monthlySales": 1987
+        },
+        {
+          "name": "猪皮串",
+          "price": 2,
+          "emoji": "🐷",
+          "description": "去脂猪皮，煮透软糯Q弹",
+          "monthlySales": 1765
+        },
+        {
+          "name": "贡菜串",
+          "price": 2,
+          "emoji": "🥬",
+          "description": "干贡菜串，煮后嘎嘣脆",
+          "monthlySales": 2456
+        },
+        {
+          "name": "海带苗串",
+          "price": 2,
+          "emoji": "🌊",
+          "description": "嫩海带苗，煮10秒，爽滑鲜美",
+          "monthlySales": 2100
+        },
+        {
+          "name": "魔芋串",
+          "price": 2,
+          "emoji": "🍢",
+          "description": "魔芋切片，低卡脆爽",
+          "monthlySales": 1876
+        },
+        {
+          "name": "土豆片串",
           "price": 1.5,
           "emoji": "🥔",
-          "description": "薄切土豆，软糯入味",
-          "monthlySales": 2876
+          "description": "薄切土豆片，煮至软糯",
+          "monthlySales": 3123
         },
         {
           "name": "藕片串",
           "price": 2,
           "emoji": "🪷",
-          "description": "脆嫩藕片，清甜爽口",
-          "monthlySales": 2654
+          "description": "脆藕片，煮后清甜爽脆",
+          "monthlySales": 2876
         },
         {
-          "name": "花菜串",
-          "price": 2,
-          "emoji": "🥦",
-          "description": "花菜脆嫩，串串绝配",
-          "monthlySales": 2456
-        },
-        {
-          "name": "木耳串",
-          "price": 2,
-          "emoji": "🍄",
-          "description": "黑木耳脆嫩，鲜美爽口",
-          "monthlySales": 2345
-        },
-        {
-          "name": "腐竹串",
-          "price": 2,
-          "emoji": "🫔",
-          "description": "腐竹软韧，吸汁入味",
-          "monthlySales": 2100
-        },
-        {
-          "name": "豆腐皮串",
-          "price": 1.5,
-          "emoji": "🫔",
-          "description": "豆皮吸汁，满口鲜香",
-          "monthlySales": 1987
-        },
-        {
-          "name": "年糕串",
-          "price": 2,
-          "emoji": "🍡",
-          "description": "年糕软糯，外焦里嫩",
-          "monthlySales": 1876
-        },
-        {
-          "name": "金针菇串",
-          "price": 2,
-          "emoji": "🍄",
-          "description": "金针菇脆嫩，吸饱汤汁",
-          "monthlySales": 1765
+          "name": "蛋炒饭",
+          "price": 10,
+          "emoji": "🍚",
+          "description": "串串店灵魂主食，配串吃绝了",
+          "monthlySales": 3456
         }
-      ]
+      ],
+      "icon": "🔥"
     },
     {
       "id": 113,
       "name": "冷锅串串",
-      "category": "串串香",
+      "category": "火锅",
       "rating": 4.6,
       "deliveryTime": 25,
       "deliveryFee": 5,
       "minPrice": 20,
       "dishes": [
         {
-          "name": "冷锅牛肉串",
-          "price": 4,
-          "emoji": "🥩",
-          "description": "牛肉鲜嫩，冷锅入味",
+          "name": "藤椒味钵钵鸡汤底",
+          "price": 15,
+          "emoji": "🌿",
+          "description": "藤椒清香，微麻爽口，冷吃串串绝配",
+          "monthlySales": 3456
+        },
+        {
+          "name": "红油味钵钵鸡汤底",
+          "price": 15,
+          "emoji": "🌶️",
+          "description": "红油芝麻飘香，香辣不燥，经典口味",
+          "monthlySales": 3987
+        },
+        {
+          "name": "去骨凤爪串",
+          "price": 5,
+          "emoji": "🐔",
+          "description": "去骨鸡爪，Q弹脆爽，浸满汤汁",
+          "monthlySales": 4321
+        },
+        {
+          "name": "鹌鹑蛋串",
+          "price": 2,
+          "emoji": "🥚",
+          "description": "鹌鹑蛋蛋白Q弹，蛋黄绵密",
+          "monthlySales": 3567
+        },
+        {
+          "name": "贡菜串",
+          "price": 2,
+          "emoji": "🥬",
+          "description": "干贡菜泡发，咬起来嘎嘣脆",
           "monthlySales": 2987
         },
         {
-          "name": "冷锅毛肚串",
-          "price": 4,
-          "emoji": "🐂",
-          "description": "毛肚脆爽，冷锅绝配",
+          "name": "鸭肠串",
+          "price": 3,
+          "emoji": "🦆",
+          "description": "鸭肠烫熟，脆嫩爽滑",
           "monthlySales": 2654
         },
         {
-          "name": "冷锅鸭肠串",
-          "price": 3,
-          "emoji": "🦆",
-          "description": "鸭肠爽脆，嚼劲十足",
+          "name": "毛肚串",
+          "price": 4,
+          "emoji": "🐂",
+          "description": "小片毛肚，充分吸收汤汁",
           "monthlySales": 2345
         },
         {
-          "name": "冷锅虾滑串",
-          "price": 5,
-          "emoji": "🦐",
-          "description": "虾滑鲜嫩，弹牙可口",
-          "monthlySales": 2100
-        },
-        {
-          "name": "冷锅郡肝串",
-          "price": 3,
-          "emoji": "🐔",
-          "description": "郡肝干香，口感脆嫩",
-          "monthlySales": 1987
-        },
-        {
-          "name": "冷锅五花肉串",
-          "price": 3,
-          "emoji": "🥓",
-          "description": "五花肉片，肥瘦适中",
+          "name": "鸡心串",
+          "price": 2.5,
+          "emoji": "❤️",
+          "description": "鸡心煮透，绵密入味",
           "monthlySales": 1876
         },
         {
-          "name": "冷锅鱼丸串",
-          "price": 2,
-          "emoji": "🐟",
-          "description": "鱼丸鲜嫩，Q弹爽口",
+          "name": "鸡胗串",
+          "price": 3,
+          "emoji": "🐔",
+          "description": "鸡胗切片，脆嫩有嚼劲",
+          "monthlySales": 2100
+        },
+        {
+          "name": "牛肉片串",
+          "price": 3,
+          "emoji": "🥩",
+          "description": "薄切牛肉片，冷吃也鲜嫩",
+          "monthlySales": 1987
+        },
+        {
+          "name": "猪耳朵串",
+          "price": 3,
+          "emoji": "🐷",
+          "description": "卤猪耳切片，脆骨与胶质交织",
           "monthlySales": 1765
         },
         {
-          "name": "冷锅土豆串",
-          "price": 2,
+          "name": "土豆片串",
+          "price": 1.5,
           "emoji": "🥔",
-          "description": "土豆片软糯，入味十足",
+          "description": "薄切土豆片，爽脆入味",
           "monthlySales": 2456
         },
         {
-          "name": "冷锅藕片串",
+          "name": "藕片串",
           "price": 2,
           "emoji": "🪷",
-          "description": "藕片脆嫩，清甜可口",
-          "monthlySales": 2345
+          "description": "脆藕片，清甜爽脆",
+          "monthlySales": 2234
         },
         {
-          "name": "冷锅花菜串",
+          "name": "腐竹串",
           "price": 2,
-          "emoji": "🥦",
-          "description": "花菜脆嫩，清甜可口",
-          "monthlySales": 2100
-        },
-        {
-          "name": "冷锅木耳串",
-          "price": 2,
-          "emoji": "🍄",
-          "description": "木耳脆嫩，鲜美爽口",
+          "emoji": "🫔",
+          "description": "腐竹吸满汤汁，软韧入味",
           "monthlySales": 1987
         },
         {
-          "name": "冷锅腐竹串",
-          "price": 2,
-          "emoji": "🫔",
-          "description": "腐竹软韧，酱香入味",
+          "name": "竹笋串",
+          "price": 2.5,
+          "emoji": "🎋",
+          "description": "嫩笋尖，清脆甘甜",
           "monthlySales": 1876
         },
         {
-          "name": "冷锅豆皮串",
+          "name": "魔芋脆丝串",
           "price": 2,
-          "emoji": "🫔",
-          "description": "豆皮吸汁，满口鲜香",
-          "monthlySales": 1765
-        },
-        {
-          "name": "冷锅年糕串",
-          "price": 2,
-          "emoji": "🍡",
-          "description": "年糕软糯，Q弹有嚼劲",
+          "emoji": "🍢",
+          "description": "魔芋丝，低卡脆爽，吸汁入味",
           "monthlySales": 1654
         },
         {
-          "name": "冷锅金针菇串",
+          "name": "厚豆干串",
           "price": 2,
-          "emoji": "🍄",
-          "description": "金针菇脆嫩，吸汁入味",
+          "emoji": "🧈",
+          "description": "厚豆干，煮后吸满汤汁，绵软入味",
+          "monthlySales": 1765
+        },
+        {
+          "name": "西兰花串",
+          "price": 2,
+          "emoji": "🥦",
+          "description": "西兰花焯水，保持翠绿脆嫩",
           "monthlySales": 1543
         }
-      ]
+      ],
+      "icon": "🔥"
     },
     {
       "id": 114,
@@ -9903,7 +10297,8 @@ const allData = {
           "description": "木鱼花飘，日式经典",
           "monthlySales": 1765
         }
-      ]
+      ],
+      "icon": "🟣"
     },
     {
       "id": 115,
@@ -10019,7 +10414,8 @@ const allData = {
           "description": "酥脆手抓饼，层层香",
           "monthlySales": 2100
         }
-      ]
+      ],
+      "icon": "🟠"
     },
     {
       "id": 116,
@@ -10135,7 +10531,8 @@ const allData = {
           "description": "多种口味慕斯杯",
           "monthlySales": 2100
         }
-      ]
+      ],
+      "icon": "🟢"
     },
     {
       "id": 117,
@@ -10251,7 +10648,8 @@ const allData = {
           "description": "港式柠檬茶，酸甜解暑",
           "monthlySales": 1654
         }
-      ]
+      ],
+      "icon": "🔴"
     },
     {
       "id": 118,
@@ -10367,7 +10765,8 @@ const allData = {
           "description": "奶油泡芙，一口爆浆",
           "monthlySales": 2654
         }
-      ]
+      ],
+      "icon": "🟣"
     },
     {
       "id": 119,
@@ -10483,7 +10882,8 @@ const allData = {
           "description": "咖啡与奶茶的完美融合",
           "monthlySales": 1654
         }
-      ]
+      ],
+      "icon": "🍰"
     },
     {
       "id": 120,
@@ -10599,11 +10999,1142 @@ const allData = {
           "description": "两种口味，一次满足",
           "monthlySales": 1765
         }
-      ]
+      ],
+      "icon": "🍰"
+    },
+    {
+      "id": 121,
+      "name": "黑珍珠三星",
+      "category": "奢华料理",
+      "rating": 5,
+      "deliveryTime": 60,
+      "deliveryFee": 50,
+      "minPrice": 888,
+      "dishes": [
+        {
+          "name": "A5和牛牛排",
+          "price": 888,
+          "emoji": "🥩",
+          "description": "顶级A5和牛，入口即化",
+          "monthlySales": 86
+        },
+        {
+          "name": "黑松露烩饭",
+          "price": 588,
+          "emoji": "🍄",
+          "description": "意大利米配黑松露片",
+          "monthlySales": 72
+        },
+        {
+          "name": "鱼子酱配吐司",
+          "price": 688,
+          "emoji": "🥚",
+          "description": "Beluga鱼子酱，奢华享受",
+          "monthlySales": 54
+        },
+        {
+          "name": "蓝鳍金枪鱼大脂刺身",
+          "price": 998,
+          "emoji": "🐟",
+          "description": "大脂最肥美部位",
+          "monthlySales": 43
+        },
+        {
+          "name": "清蒸帝王蟹",
+          "price": 1288,
+          "emoji": "🦀",
+          "description": "整只帝王蟹，清蒸保留原味",
+          "monthlySales": 31
+        },
+        {
+          "name": "澳洲龙虾刺身",
+          "price": 888,
+          "emoji": "🦞",
+          "description": "活龙虾现做，鲜美甘甜",
+          "monthlySales": 47
+        },
+        {
+          "name": "鹅肝慕斯配无花果",
+          "price": 488,
+          "emoji": "🍮",
+          "description": "法式鹅肝，入口绵密",
+          "monthlySales": 65
+        },
+        {
+          "name": "鲍汁扣花胶",
+          "price": 888,
+          "emoji": "🐚",
+          "description": "精选花胶，鲍汁扣制",
+          "monthlySales": 39
+        },
+        {
+          "name": "松茸土瓶蒸",
+          "price": 588,
+          "emoji": "🍄",
+          "description": "松茸精华，土瓶慢蒸",
+          "monthlySales": 52
+        },
+        {
+          "name": "黑金流沙包",
+          "price": 128,
+          "emoji": "🥟",
+          "description": "竹炭外皮，流沙内馅",
+          "monthlySales": 156
+        }
+      ],
+      "icon": "🧋"
+    },
+    {
+      "id": 122,
+      "name": "omakase天花板",
+      "category": "奢华料理",
+      "rating": 5,
+      "deliveryTime": 50,
+      "deliveryFee": 45,
+      "minPrice": 1288,
+      "dishes": [
+        {
+          "name": "主厨精选刺身七品",
+          "price": 1288,
+          "emoji": "🍣",
+          "description": "七种时令珍稀鱼生",
+          "monthlySales": 38
+        },
+        {
+          "name": "羽立海胆军舰卷",
+          "price": 688,
+          "emoji": "🌊",
+          "description": "北海道羽立海胆，香甜浓郁",
+          "monthlySales": 55
+        },
+        {
+          "name": "蓝鳍金枪鱼中腹手握",
+          "price": 288,
+          "emoji": "🍣",
+          "description": "中腹油脂丰富，入口即化",
+          "monthlySales": 98
+        },
+        {
+          "name": "A5和牛寿喜烧",
+          "price": 1088,
+          "emoji": "🥩",
+          "description": "和牛薄片，寿喜酱汁",
+          "monthlySales": 42
+        },
+        {
+          "name": "松叶蟹茶碗蒸",
+          "price": 488,
+          "emoji": "🦀",
+          "description": "蟹肉蒸蛋，极致鲜美",
+          "monthlySales": 67
+        },
+        {
+          "name": "寒鰤鱼刺身",
+          "price": 688,
+          "emoji": "🐟",
+          "description": "冬季寒鰤，油脂丰腴",
+          "monthlySales": 48
+        },
+        {
+          "name": "鲍鱼酒蒸",
+          "price": 588,
+          "emoji": "🐚",
+          "description": "活鲍鱼酒蒸，Q弹软糯",
+          "monthlySales": 53
+        },
+        {
+          "name": "金目鲷一夜干",
+          "price": 488,
+          "emoji": "🐟",
+          "description": "一夜干风味，油脂香浓",
+          "monthlySales": 61
+        },
+        {
+          "name": "静冈蜜瓜（1/4切）",
+          "price": 388,
+          "emoji": "🍈",
+          "description": "静冈县顶级蜜瓜，香甜多汁",
+          "monthlySales": 78
+        },
+        {
+          "name": "黑松露和牛塔塔",
+          "price": 688,
+          "emoji": "🥩",
+          "description": "和牛生食，黑松露提味",
+          "monthlySales": 44
+        }
+      ],
+      "icon": "🍣"
+    },
+    {
+      "id": 123,
+      "name": "顶级私房菜",
+      "category": "奢华料理",
+      "rating": 5,
+      "deliveryTime": 55,
+      "deliveryFee": 48,
+      "minPrice": 988,
+      "dishes": [
+        {
+          "name": "佛跳墙",
+          "price": 1888,
+          "emoji": "🏮",
+          "description": "鲍参翅肚，文火慢煨",
+          "monthlySales": 28
+        },
+        {
+          "name": "开水白菜",
+          "price": 588,
+          "emoji": "🥬",
+          "description": "清汤如开水，白菜似白玉",
+          "monthlySales": 76
+        },
+        {
+          "name": "黄焖鱼翅",
+          "price": 1288,
+          "emoji": "🦈",
+          "description": "金钩翅，黄焖入味",
+          "monthlySales": 35
+        },
+        {
+          "name": "葱烧海参",
+          "price": 688,
+          "emoji": "🌊",
+          "description": "山东辽参，葱香浓郁",
+          "monthlySales": 58
+        },
+        {
+          "name": "东坡牛小排",
+          "price": 888,
+          "emoji": "🥩",
+          "description": "东坡技法，牛小排酥烂",
+          "monthlySales": 47
+        },
+        {
+          "name": "松露炒饭",
+          "price": 388,
+          "emoji": "🍚",
+          "description": "黑松露碎，米粒油亮",
+          "monthlySales": 83
+        },
+        {
+          "name": "冰糖燕窝",
+          "price": 688,
+          "emoji": "🥄",
+          "description": "官燕盏，清甜滋补",
+          "monthlySales": 52
+        },
+        {
+          "name": "清酒鹅肝",
+          "price": 488,
+          "emoji": "🍮",
+          "description": "清酒浸泡，去腥提香",
+          "monthlySales": 66
+        },
+        {
+          "name": "黑金鲍砂锅",
+          "price": 1288,
+          "emoji": "🐚",
+          "description": "新西兰黑金鲍，砂锅慢炖",
+          "monthlySales": 33
+        },
+        {
+          "name": "紫铜炭烤羊排",
+          "price": 688,
+          "emoji": "🍖",
+          "description": "紫铜炭火，外焦里嫩",
+          "monthlySales": 55
+        }
+      ],
+      "icon": "💎"
+    },
+    {
+      "id": 124,
+      "name": "顶级酒窖",
+      "category": "酒水珍品",
+      "rating": 5,
+      "deliveryTime": 40,
+      "deliveryFee": 30,
+      "minPrice": 588,
+      "dishes": [
+        {
+          "name": "1982年拉菲",
+          "price": 38888,
+          "emoji": "🍷",
+          "description": "传奇年份，顶级波尔多",
+          "monthlySales": 8
+        },
+        {
+          "name": "罗曼尼康帝",
+          "price": 68888,
+          "emoji": "🍷",
+          "description": "勃艮第王者，一瓶难求",
+          "monthlySales": 3
+        },
+        {
+          "name": "山崎55年",
+          "price": 25888,
+          "emoji": "🥃",
+          "description": "日本威士忌巅峰之作",
+          "monthlySales": 6
+        },
+        {
+          "name": "麦卡伦78年",
+          "price": 19888,
+          "emoji": "🥃",
+          "description": "苏格兰单一麦芽传奇",
+          "monthlySales": 5
+        },
+        {
+          "name": "路易十三干邑",
+          "price": 16888,
+          "emoji": "🥃",
+          "description": "干邑之王，历经百年",
+          "monthlySales": 7
+        },
+        {
+          "name": "库克香槟",
+          "price": 8888,
+          "emoji": "🍾",
+          "description": "顶级香槟，细腻持久",
+          "monthlySales": 12
+        },
+        {
+          "name": "茅台80年陈酿",
+          "price": 28888,
+          "emoji": "🍶",
+          "description": "酱香鼻祖，岁月沉淀",
+          "monthlySales": 9
+        },
+        {
+          "name": "五粮液50年",
+          "price": 8888,
+          "emoji": "🍶",
+          "description": "浓香经典，陈年佳酿",
+          "monthlySales": 14
+        },
+        {
+          "name": "轻井泽1981雪莉桶",
+          "price": 15888,
+          "emoji": "🥃",
+          "description": "日本威士忌已逝经典",
+          "monthlySales": 6
+        }
+      ],
+      "icon": "💎"
+    },
+    {
+      "id": 125,
+      "name": "精品调酒",
+      "category": "酒水珍品",
+      "rating": 4.9,
+      "deliveryTime": 35,
+      "deliveryFee": 25,
+      "minPrice": 488,
+      "dishes": [
+        {
+          "name": "松露马天尼",
+          "price": 588,
+          "emoji": "🍸",
+          "description": "黑松露浸泡伏特加",
+          "monthlySales": 87
+        },
+        {
+          "name": "金箔香槟鸡尾酒",
+          "price": 888,
+          "emoji": "🍾",
+          "description": "可食用金箔装饰",
+          "monthlySales": 54
+        },
+        {
+          "name": "鱼子酱血腥玛丽",
+          "price": 688,
+          "emoji": "🥚",
+          "description": "鱼子酱点缀，奢华版血腥玛丽",
+          "monthlySales": 43
+        },
+        {
+          "name": "白松露尼格罗尼",
+          "price": 788,
+          "emoji": "🍸",
+          "description": "白松露风味，经典复刻",
+          "monthlySales": 38
+        },
+        {
+          "name": "北海道海胆慕斯鸡尾酒",
+          "price": 988,
+          "emoji": "🌊",
+          "description": "海胆慕斯与金酒融合",
+          "monthlySales": 32
+        },
+        {
+          "name": "静冈蜜瓜莫吉托",
+          "price": 488,
+          "emoji": "🍈",
+          "description": "蜜瓜清甜，薄荷清爽",
+          "monthlySales": 112
+        },
+        {
+          "name": "24K金箔威士忌酸",
+          "price": 1288,
+          "emoji": "🥃",
+          "description": "金箔闪耀，酸爽平衡",
+          "monthlySales": 28
+        },
+        {
+          "name": "黑松露浓缩咖啡马天尼",
+          "price": 888,
+          "emoji": "☕",
+          "description": "松露与咖啡的完美结合",
+          "monthlySales": 46
+        }
+      ],
+      "icon": "🍷"
+    },
+    {
+      "id": 126,
+      "name": "冷柜珍藏",
+      "category": "酒水珍品",
+      "rating": 4.8,
+      "deliveryTime": 30,
+      "deliveryFee": 20,
+      "minPrice": 58,
+      "dishes": [
+        {
+          "name": "巴黎水限量版",
+          "price": 88,
+          "emoji": "💧",
+          "description": "限量包装，珍藏之选",
+          "monthlySales": 256
+        },
+        {
+          "name": "爱尔兰泉水",
+          "price": 128,
+          "emoji": "💧",
+          "description": "天然泉水，纯净甘甜",
+          "monthlySales": 198
+        },
+        {
+          "name": "勃艮第黑皮诺2015",
+          "price": 4888,
+          "emoji": "🍷",
+          "description": "顶级勃艮第，细腻优雅",
+          "monthlySales": 23
+        },
+        {
+          "name": "巴罗洛2013",
+          "price": 3888,
+          "emoji": "🍷",
+          "description": "意大利酒王，陈年潜力",
+          "monthlySales": 31
+        },
+        {
+          "name": "冰岛冰川水",
+          "price": 188,
+          "emoji": "🧊",
+          "description": "冰岛天然冰川水",
+          "monthlySales": 176
+        },
+        {
+          "name": "圣培露1L",
+          "price": 68,
+          "emoji": "💧",
+          "description": "气泡水经典之选",
+          "monthlySales": 432
+        },
+        {
+          "name": "普娜矿泉水750ml",
+          "price": 58,
+          "emoji": "💧",
+          "description": "意大利高端矿泉水",
+          "monthlySales": 567
+        },
+        {
+          "name": "路易王妃水晶香槟2008",
+          "price": 12888,
+          "emoji": "🍾",
+          "description": "水晶瓶身，香槟贵族",
+          "monthlySales": 14
+        },
+        {
+          "name": "唐培里侬香槟王2009",
+          "price": 8888,
+          "emoji": "🍾",
+          "description": "香槟王，尊贵之选",
+          "monthlySales": 18
+        },
+        {
+          "name": "VOSS矿泉水800ml",
+          "price": 98,
+          "emoji": "💧",
+          "description": "挪威高端水，瓶身设计",
+          "monthlySales": 312
+        }
+      ],
+      "icon": "🍷"
+    },
+    {
+      "id": 127,
+      "name": "炭火皇冠牛排屋",
+      "category": "奢华料理",
+      "rating": 4.9,
+      "deliveryTime": 45,
+      "deliveryFee": 15,
+      "minPrice": 388,
+      "dishes": [
+        {
+          "name": "干式熟成T骨牛排45天",
+          "price": 1588,
+          "emoji": "🥩",
+          "description": "45天干式熟成，风味浓郁",
+          "monthlySales": 56
+        },
+        {
+          "name": "战斧牛排1.2kg",
+          "price": 1888,
+          "emoji": "🥩",
+          "description": "巨型战斧，适合分享",
+          "monthlySales": 38
+        },
+        {
+          "name": "神户和牛菲力",
+          "price": 1288,
+          "emoji": "🥩",
+          "description": "最嫩部位，入口即化",
+          "monthlySales": 47
+        },
+        {
+          "name": "黑松露黄油煎肉眼",
+          "price": 988,
+          "emoji": "🥩",
+          "description": "肉眼油香，松露点睛",
+          "monthlySales": 72
+        },
+        {
+          "name": "红酒慢炖牛肋排",
+          "price": 688,
+          "emoji": "🍖",
+          "description": "红酒炖煮，脱骨软烂",
+          "monthlySales": 91
+        },
+        {
+          "name": "烤牛骨髓配海盐吐司",
+          "price": 388,
+          "emoji": "🦴",
+          "description": "牛骨髓浓郁，吐司酥脆",
+          "monthlySales": 124
+        },
+        {
+          "name": "惠灵顿牛排",
+          "price": 888,
+          "emoji": "🥩",
+          "description": "酥皮包裹，菲力核心",
+          "monthlySales": 63
+        }
+      ],
+      "icon": "🔥"
+    },
+    {
+      "id": 128,
+      "name": "深蓝海味",
+      "category": "奢华料理",
+      "rating": 4.9,
+      "deliveryTime": 40,
+      "deliveryFee": 20,
+      "minPrice": 288,
+      "dishes": [
+        {
+          "name": "活帝王蟹",
+          "price": 1688,
+          "emoji": "🦀",
+          "description": "鲜活帝王蟹，极致鲜美",
+          "monthlySales": 34
+        },
+        {
+          "name": "活象拔蚌刺身",
+          "price": 1288,
+          "emoji": "🐚",
+          "description": "活象拔蚌，现杀刺身",
+          "monthlySales": 28
+        },
+        {
+          "name": "北海道活海胆",
+          "price": 688,
+          "emoji": "🌊",
+          "description": "活海胆现开，鲜甜无比",
+          "monthlySales": 78
+        },
+        {
+          "name": "法国吉拉多生蚝",
+          "price": 188,
+          "emoji": "🦪",
+          "description": "吉拉多N1，蚝中精品",
+          "monthlySales": 234
+        },
+        {
+          "name": "阿拉斯加帝王鲑",
+          "price": 888,
+          "emoji": "🐟",
+          "description": "野生帝王鲑，油脂丰富",
+          "monthlySales": 45
+        },
+        {
+          "name": "波士顿龙虾",
+          "price": 588,
+          "emoji": "🦞",
+          "description": "鲜活波龙，蒜蓉蒸或刺身",
+          "monthlySales": 67
+        },
+        {
+          "name": "活赤贝",
+          "price": 288,
+          "emoji": "🐚",
+          "description": "活赤贝刺身，爽脆甘甜",
+          "monthlySales": 89
+        },
+        {
+          "name": "珍宝蟹",
+          "price": 488,
+          "emoji": "🦀",
+          "description": "肉厚饱满，适合清蒸",
+          "monthlySales": 56
+        }
+      ],
+      "icon": "💎"
+    },
+    {
+      "id": 129,
+      "name": "甜梦工坊",
+      "category": "甜品",
+      "rating": 4.9,
+      "deliveryTime": 35,
+      "deliveryFee": 12,
+      "minPrice": 188,
+      "dishes": [
+        {
+          "name": "金箔冰淇淋",
+          "price": 388,
+          "emoji": "🍦",
+          "description": "金箔包裹，奢华冰淇淋",
+          "monthlySales": 156
+        },
+        {
+          "name": "猫山王榴莲千层",
+          "price": 588,
+          "emoji": "🍰",
+          "description": "猫山王榴莲，层层浓郁",
+          "monthlySales": 98
+        },
+        {
+          "name": "白松露提拉米苏",
+          "price": 488,
+          "emoji": "🍰",
+          "description": "白松露风味，意式经典",
+          "monthlySales": 73
+        },
+        {
+          "name": "静冈蜜瓜蛋糕",
+          "price": 688,
+          "emoji": "🍈",
+          "description": "蜜瓜果肉，轻盈蛋糕体",
+          "monthlySales": 65
+        },
+        {
+          "name": "蓝莓鱼子酱慕斯",
+          "price": 388,
+          "emoji": "🍰",
+          "description": "鱼子酱质感，蓝莓酸甜",
+          "monthlySales": 87
+        },
+        {
+          "name": "手工松露巧克力礼盒",
+          "price": 888,
+          "emoji": "🍫",
+          "description": "24粒手工松露巧克力",
+          "monthlySales": 42
+        }
+      ],
+      "icon": "⚡"
+    },
+    {
+      "id": 130,
+      "name": "日本果园直送",
+      "category": "酒水珍品",
+      "rating": 4.9,
+      "deliveryTime": 30,
+      "deliveryFee": 10,
+      "minPrice": 288,
+      "dishes": [
+        {
+          "name": "晴王麝香葡萄（一串）",
+          "price": 888,
+          "emoji": "🍇",
+          "description": "顶级晴王，脆甜无籽",
+          "monthlySales": 134
+        },
+        {
+          "name": "宮崎芒果（一个）",
+          "price": 588,
+          "emoji": "🥭",
+          "description": "太阳之子，香甜浓郁",
+          "monthlySales": 98
+        },
+        {
+          "name": "夕张蜜瓜（一个）",
+          "price": 1288,
+          "emoji": "🍈",
+          "description": "蜜瓜之王，入口即化",
+          "monthlySales": 56
+        },
+        {
+          "name": "古都华草莓（一盒9颗）",
+          "price": 688,
+          "emoji": "🍓",
+          "description": "京都名品，白草莓之王",
+          "monthlySales": 87
+        },
+        {
+          "name": "太阳之子芒果（一个）",
+          "price": 888,
+          "emoji": "🥭",
+          "description": "宫崎太阳之子，甜蜜多汁",
+          "monthlySales": 72
+        },
+        {
+          "name": "佐藤锦樱桃（一盒）",
+          "price": 588,
+          "emoji": "🍒",
+          "description": "山形县佐藤锦，樱桃极品",
+          "monthlySales": 76
+        },
+        {
+          "name": "桃薫白草莓（一盒）",
+          "price": 788,
+          "emoji": "🍓",
+          "description": "白草莓，桃香四溢",
+          "monthlySales": 63
+        },
+        {
+          "name": "淡雪草莓（一盒）",
+          "price": 488,
+          "emoji": "🍓",
+          "description": "粉色草莓，酸甜平衡",
+          "monthlySales": 112
+        },
+        {
+          "name": "黑皮西瓜（一个）",
+          "price": 1888,
+          "emoji": "🍉",
+          "description": "北海道黑皮西瓜，稀世珍品",
+          "monthlySales": 28
+        },
+        {
+          "name": "水蜜桃（精选两颗装）",
+          "price": 388,
+          "emoji": "🍑",
+          "description": "冈山水蜜桃，多汁甜蜜",
+          "monthlySales": 143
+        }
+      ],
+      "icon": "🌟"
+    },
+    {
+      "id": 131,
+      "name": "世界水果博览",
+      "category": "酒水珍品",
+      "rating": 4.8,
+      "deliveryTime": 30,
+      "deliveryFee": 10,
+      "minPrice": 188,
+      "dishes": [
+        {
+          "name": "猫山王榴莲整果",
+          "price": 988,
+          "emoji": "🍈",
+          "description": "猫山王D197，整果空运",
+          "monthlySales": 89
+        },
+        {
+          "name": "黑刺榴莲",
+          "price": 1688,
+          "emoji": "🍈",
+          "description": "黑刺D200，榴莲之王",
+          "monthlySales": 43
+        },
+        {
+          "name": "澳洲塔斯马尼亚车厘子（1kg）",
+          "price": 588,
+          "emoji": "🍒",
+          "description": "塔斯马尼亚季，脆甜多汁",
+          "monthlySales": 156
+        },
+        {
+          "name": "新西兰金奇异果（6颗）",
+          "price": 288,
+          "emoji": "🥝",
+          "description": "佳沛金果，维C之王",
+          "monthlySales": 234
+        },
+        {
+          "name": "秘鲁蓝莓（500g）",
+          "price": 188,
+          "emoji": "🫐",
+          "description": "大果蓝莓，新鲜直送",
+          "monthlySales": 312
+        },
+        {
+          "name": "智利空运车厘子（1kg）",
+          "price": 488,
+          "emoji": "🍒",
+          "description": "智利JJ级车厘子",
+          "monthlySales": 198
+        },
+        {
+          "name": "厄瓜多尔麒麟果（2颗）",
+          "price": 388,
+          "emoji": "🌵",
+          "description": "黄色火龙果，甜度极高",
+          "monthlySales": 102
+        },
+        {
+          "name": "泰国金枕榴莲整果",
+          "price": 588,
+          "emoji": "🍈",
+          "description": "金枕A级，榴莲入门经典",
+          "monthlySales": 267
+        },
+        {
+          "name": "台湾爱文芒果（3颗）",
+          "price": 288,
+          "emoji": "🥭",
+          "description": "爱文芒果，香气浓郁",
+          "monthlySales": 189
+        },
+        {
+          "name": "菲律宾金菠萝（一个）",
+          "price": 188,
+          "emoji": "🍍",
+          "description": "S&W金菠萝，酸甜多汁",
+          "monthlySales": 276
+        }
+      ],
+      "icon": "⚡"
+    },
+    {
+      "id": 132,
+      "name": "法国名庄",
+      "category": "酒水珍品",
+      "rating": 5,
+      "deliveryTime": 45,
+      "deliveryFee": 35,
+      "minPrice": 1888,
+      "dishes": [
+        {
+          "name": "罗曼尼康帝1999",
+          "price": 88888,
+          "emoji": "🍷",
+          "description": "勃艮第之巅，梦幻珍酿",
+          "monthlySales": 2
+        },
+        {
+          "name": "拉菲古堡2000",
+          "price": 28888,
+          "emoji": "🍷",
+          "description": "千禧年份，拉菲正牌",
+          "monthlySales": 7
+        },
+        {
+          "name": "玛歌酒庄2005",
+          "price": 18888,
+          "emoji": "🍷",
+          "description": "玛歌古堡，优雅典范",
+          "monthlySales": 9
+        },
+        {
+          "name": "木桐酒庄2010",
+          "price": 15888,
+          "emoji": "🍷",
+          "description": "木桐正牌，艺术酒标",
+          "monthlySales": 11
+        },
+        {
+          "name": "白马酒庄2009",
+          "price": 18888,
+          "emoji": "🍷",
+          "description": "圣埃美隆一级A",
+          "monthlySales": 8
+        },
+        {
+          "name": "柏图斯2008",
+          "price": 38888,
+          "emoji": "🍷",
+          "description": "波尔多酒王，梅洛巅峰",
+          "monthlySales": 5
+        },
+        {
+          "name": "滴金酒庄贵腐甜白2009",
+          "price": 12888,
+          "emoji": "🍾",
+          "description": "贵腐甜白之王",
+          "monthlySales": 12
+        },
+        {
+          "name": "沙龙香槟2002",
+          "price": 25888,
+          "emoji": "🍾",
+          "description": "白中白香槟，传奇年份",
+          "monthlySales": 6
+        },
+        {
+          "name": "库克安邦内黑钻香槟",
+          "price": 15888,
+          "emoji": "🍾",
+          "description": "黑钻版，库克巅峰",
+          "monthlySales": 7
+        },
+        {
+          "name": "路易王妃水晶桃红2008",
+          "price": 18888,
+          "emoji": "🍾",
+          "description": "水晶桃红，极致梦幻",
+          "monthlySales": 6
+        }
+      ],
+      "icon": "🟣"
+    },
+    {
+      "id": 133,
+      "name": "世界烈酒",
+      "category": "酒水珍品",
+      "rating": 5,
+      "deliveryTime": 45,
+      "deliveryFee": 35,
+      "minPrice": 2888,
+      "dishes": [
+        {
+          "name": "麦卡伦1926（拍卖级）",
+          "price": 888888,
+          "emoji": "🥃",
+          "description": "史上最贵威士忌之一",
+          "monthlySales": 1
+        },
+        {
+          "name": "麦卡伦璀璨莱俪62年",
+          "price": 288888,
+          "emoji": "🥃",
+          "description": "莱俪水晶瓶身，艺术珍品",
+          "monthlySales": 1
+        },
+        {
+          "name": "山崎55年单一麦芽",
+          "price": 158888,
+          "emoji": "🥃",
+          "description": "日本威士忌最高年份",
+          "monthlySales": 2
+        },
+        {
+          "name": "轻井泽1963",
+          "price": 198888,
+          "emoji": "🥃",
+          "description": "已消失的传奇酒厂",
+          "monthlySales": 1
+        },
+        {
+          "name": "Dalmore 62年",
+          "price": 128888,
+          "emoji": "🥃",
+          "description": "苏格兰超高龄威士忌",
+          "monthlySales": 2
+        },
+        {
+          "name": "路易十三黑珍珠",
+          "price": 88888,
+          "emoji": "🥃",
+          "description": "干邑艺术杰作",
+          "monthlySales": 3
+        },
+        {
+          "name": "轩尼诗百年禧干邑",
+          "price": 68888,
+          "emoji": "🥃",
+          "description": "为纪念百年禧而作",
+          "monthlySales": 4
+        },
+        {
+          "name": "茅台80年陈酿",
+          "price": 58888,
+          "emoji": "🍶",
+          "description": "酱香国酒，时间之味",
+          "monthlySales": 6
+        },
+        {
+          "name": "響35年有田烧",
+          "price": 38888,
+          "emoji": "🥃",
+          "description": "響系列巅峰，有田烧瓶身",
+          "monthlySales": 5
+        },
+        {
+          "name": "皇家礼炮时光典藏",
+          "price": 28888,
+          "emoji": "🥃",
+          "description": "皇家礼炮限量版",
+          "monthlySales": 8
+        }
+      ],
+      "icon": "🎪"
+    },
+    {
+      "id": 134,
+      "name": "意法臻选",
+      "category": "奢华料理",
+      "rating": 4.9,
+      "deliveryTime": 40,
+      "deliveryFee": 18,
+      "minPrice": 388,
+      "dishes": [
+        {
+          "name": "阿尔巴白松露（10g，当季）",
+          "price": 2888,
+          "emoji": "🍄",
+          "description": "当季现刨，意大利白松露",
+          "monthlySales": 23
+        },
+        {
+          "name": "帕尔马火腿（36个月陈年切片）",
+          "price": 388,
+          "emoji": "🥓",
+          "description": "36个月陈年，柔韧咸香",
+          "monthlySales": 187
+        },
+        {
+          "name": "意大利黑醋（25年陈酿100ml）",
+          "price": 888,
+          "emoji": "🧂",
+          "description": "25年陈酿，浓郁果香",
+          "monthlySales": 65
+        },
+        {
+          "name": "法国鹅肝整肝（500g）",
+          "price": 888,
+          "emoji": "🍮",
+          "description": "整肝等级，法式料理核心",
+          "monthlySales": 54
+        },
+        {
+          "name": "布雷斯鸡（AOC认证整只）",
+          "price": 1288,
+          "emoji": "🐔",
+          "description": "法国AOC认证，品质保证",
+          "monthlySales": 38
+        },
+        {
+          "name": "佩里戈尔黑松露（10g）",
+          "price": 1888,
+          "emoji": "🍄",
+          "description": "法国佩里戈尔黑松露",
+          "monthlySales": 28
+        },
+        {
+          "name": "帕马森干酪（36个月轮切）",
+          "price": 588,
+          "emoji": "🧀",
+          "description": "36个月陈年，结晶丰富",
+          "monthlySales": 76
+        },
+        {
+          "name": "西西里岛开心果（250g）",
+          "price": 388,
+          "emoji": "🥜",
+          "description": "西西里开心果，翠绿香浓",
+          "monthlySales": 132
+        },
+        {
+          "name": "普罗旺斯薰衣草蜂蜜",
+          "price": 488,
+          "emoji": "🍯",
+          "description": "普罗旺斯纯净薰衣草蜂蜜",
+          "monthlySales": 89
+        },
+        {
+          "name": "莫德纳巴萨米克醋（50年陈）",
+          "price": 2888,
+          "emoji": "🧂",
+          "description": "50年陈酿，醋中黄金",
+          "monthlySales": 21
+        }
+      ],
+      "icon": "🎨"
+    },
+    {
+      "id": 135,
+      "name": "伊比利亚火腿专门店",
+      "category": "奢华料理",
+      "rating": 4.9,
+      "deliveryTime": 35,
+      "deliveryFee": 15,
+      "minPrice": 188,
+      "dishes": [
+        {
+          "name": "5J橡果饲伊比利亚火腿（手工切片50g）",
+          "price": 688,
+          "emoji": "🥓",
+          "description": "5J Cinco Jotas，极品火腿",
+          "monthlySales": 156
+        },
+        {
+          "name": "小何塞伊比利亚火腿（后腿整只）",
+          "price": 8888,
+          "emoji": "🥓",
+          "description": "小何塞Joselito，火腿之王",
+          "monthlySales": 12
+        },
+        {
+          "name": "Cinco Jotas里脊火腿",
+          "price": 1288,
+          "emoji": "🥓",
+          "description": "里脊部位，更加细腻",
+          "monthlySales": 43
+        },
+        {
+          "name": "伊比利亚黑猪腊肠",
+          "price": 388,
+          "emoji": "🌭",
+          "description": "橡果饲黑猪，风味独特",
+          "monthlySales": 98
+        },
+        {
+          "name": "伊比利亚黑猪里脊肉（生鲜1kg）",
+          "price": 688,
+          "emoji": "🥩",
+          "description": "顶级黑猪肉，生鲜空运",
+          "monthlySales": 65
+        },
+        {
+          "name": "橡果饲猪油（手工）",
+          "price": 288,
+          "emoji": "🧈",
+          "description": "手工提炼，烹饪至宝",
+          "monthlySales": 76
+        },
+        {
+          "name": "伊比利亚火腿骨（煲汤用）",
+          "price": 188,
+          "emoji": "🦴",
+          "description": "火腿骨煲汤，风味无穷",
+          "monthlySales": 134
+        },
+        {
+          "name": "西班牙曼彻格奶酪（DOP）",
+          "price": 388,
+          "emoji": "🧀",
+          "description": "DOP认证，羊奶干酪",
+          "monthlySales": 87
+        }
+      ],
+      "icon": "🔸"
     }
   ]
 };
 
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = allData;
-}
+if(typeof module!=="undefined"){module.exports=allData;}
