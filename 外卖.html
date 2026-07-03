@@ -357,7 +357,38 @@
     border-radius: 20px; font-size: 14px; font-weight: 600;
     cursor: pointer; display: none;
   }
-  .delivery-close.show { display: inline-block; }
+  .delivery-close.show { display: inline-block; margin-right: 8px; }
+  .delivery-minimize {
+    margin-top: 20px; padding: 10px 24px;
+    background: var(--bg); color: var(--text-light); border: 1px solid var(--border);
+    border-radius: 20px; font-size: 13px; font-weight: 500;
+    cursor: pointer; display: none;
+  }
+  .delivery-minimize.show { display: inline-block; }
+  .delivery-btns { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+
+  /* 浮动配送进度条 */
+  .floating-delivery {
+    position: fixed; bottom: 120px; left: 50%; transform: translateX(-50%);
+    width: calc(100% - 24px); max-width: 406px;
+    background: white; border-radius: 12px;
+    padding: 10px 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 195;
+    display: flex; align-items: center; gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0; visibility: hidden;
+  }
+  .floating-delivery.show { opacity: 1; visibility: visible; }
+  .floating-delivery:active { transform: translateX(-50%) scale(0.97); }
+  .floating-icon { font-size: 28px; flex-shrink: 0; animation: bounce 1s infinite; }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .floating-info { flex: 1; min-width: 0; }
+  .floating-status { font-size: 12px; color: var(--text); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .floating-time { font-size: 11px; color: var(--text-lighter); }
+  .floating-progress { width: 100%; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; margin-top: 4px; }
+  .floating-progress-bar { height: 100%; background: var(--primary); border-radius: 2px; width: 0%; }
 
   .success-overlay {
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -498,10 +529,23 @@
   <div class="delivery-box">
     <div class="delivery-icon">🛵</div>
     <div class="delivery-title">骑手正在配送中</div>
-    <div class="delivery-text">预计 30 分钟内送达</div>
+    <div class="delivery-text" id="deliveryText">预计 30 分钟内送达</div>
     <div class="delivery-progress"><div class="delivery-progress-bar" id="deliveryProgress"></div></div>
     <div class="delivery-status" id="deliveryStatus">商家已接单，正在备餐...</div>
-    <button class="delivery-close" id="deliveryClose" onclick="showSuccess()">查看订单</button>
+    <div class="delivery-btns">
+      <button class="delivery-close" id="deliveryClose" onclick="showSuccess()">查看订单</button>
+      <button class="delivery-minimize" id="deliveryMinimize" onclick="minimizeDelivery()">后台配送，继续逛 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- 浮动配送进度条 -->
+<div class="floating-delivery" id="floatingDelivery" onclick="restoreDelivery()">
+  <div class="floating-icon">🛵</div>
+  <div class="floating-info">
+    <div class="floating-status" id="floatingStatus">配送中...</div>
+    <div class="floating-progress"><div class="floating-progress-bar" id="floatingProgress"></div></div>
+    <div class="floating-time" id="floatingTime"></div>
   </div>
 </div>
 
@@ -867,59 +911,86 @@ function startCheckout() {
   const progress = document.getElementById('deliveryProgress');
   const status = document.getElementById('deliveryStatus');
   const closeBtn = document.getElementById('deliveryClose');
+  const minimizeBtn = document.getElementById('deliveryMinimize');
   const timerEl = document.getElementById('deliveryText');
-  overlay.classList.add('show'); closeBtn.classList.remove('show'); progress.style.width = '0%';
+  const floating = document.getElementById('floatingDelivery');
+  const floatingStatus = document.getElementById('floatingStatus');
+  const floatingProgress = document.getElementById('floatingProgress');
+  const floatingTime = document.getElementById('floatingTime');
 
-  // 总时长2分半左右
-  const TOTAL_TIME = 150000; // 2.5分钟
+  overlay.classList.add('show'); closeBtn.classList.remove('show');
+  minimizeBtn.classList.add('show'); progress.style.width = '0%';
+  floating.classList.remove('show');
+
+  // 每家餐厅配送时间不同，在4-6分钟之间随机
+  const TOTAL_TIME = 240000 + Math.random() * 120000; // 4-6分钟
+
   const startTime = Date.now();
   let deliveryTimer;
   let eventTimer;
   let finished = false;
+  let minimized = false;
 
-  // 随机事件库
+  // 搞怪随机事件库
   const randomEvents = [
-    { text: '骑手正在等红灯，顺便照了照后视镜...', prob: 0.25 },
-    { text: '前方拥堵，骑手决定抄近道...', prob: 0.2 },
-    { text: '骑手在楼下找门牌号，绕了两圈...', prob: 0.15 },
-    { text: '骑手接了个电话，说马上就到...', prob: 0.2 },
-    { text: '外卖袋子提手断了，骑手在重新绑...', prob: 0.1 },
-    { text: '骑手走错单元了，正在往回赶...', prob: 0.15 },
-    { text: '骑手觉得你的外卖闻起来好香，在咽口水...', prob: 0.12 },
-    { text: '电梯有点慢，骑手在爬楼梯...', prob: 0.18 },
-    { text: '骑手被门禁系统拦住了，正在呼叫...', prob: 0.1 },
-    { text: '骑手的电动车快没电了，在祈祷...', prob: 0.08 },
+    '🌧 突然下暴雨了！骑手在路边屋檐下躲雨...（延迟2分钟）',
+    '🧊 下冰雹了！骑手把头盔戴紧，找了个天桥躲着...（延迟1分钟）',
+    '🐱 一只流浪橘猫拦住了骑手，在他脚边蹭了蹭...骑手蹲下来撸了会儿猫...',
+    '🐶 路边有只小狗跟着骑手的车跑，骑手停车给它喂了根火腿肠...',
+    '🌅 骑手看到了特别美的夕阳，忍不住停下来拍了一张发朋友圈...',
+    '🌄 今天的晚霞太美了，骑手放慢速度多看了几眼...',
+    '🎵 骑手听到了路边街头艺人在唱歌，停下来听了半首歌...',
+    '🦋 一只蝴蝶飞进了骑手的头盔里，花了半天才赶出去...',
+    '🚧 前方修路挖了一条大沟，骑手绕了一大圈...',
+    '🚦 这个路口的红灯特别长，骑手等了又等...',
+    '📱 骑手看了一眼导航，发现走反了方向，默默掉头...',
+    '🛗 电梯坏了！骑手看了下你住12楼，咬咬牙开始爬楼梯...',
+    '🔑 小区门禁要刷脸，骑手刷了五次都没通过...',
+    '🍜 骑手闻了闻你的外卖，情不自禁说了一句"真香"...',
+    '💨 一阵妖风吹来，把骑手的帽子吹跑了，追了五十米...',
+    '⛽ 骑手的电动车没电了，正好在路边换了个电池...',
+    '🎆 远处有人在放烟花，骑手停下来看了30秒...',
+    '🐌 骑手在小区里迷路了，绕了两圈没找到你的楼...',
+    '☕ 骑手路过奶茶店，犹豫了3秒钟要不要给自己来一杯...',
+    '🏀 路边一群人在打篮球，球滚到了骑手车下，帮忙捡了个球...',
   ];
 
   const statusSteps = [
-    { pct: 5, text: '订单已提交，等待商家接单...' },
-    { pct: 15, text: '商家已接单，正在备餐中...' },
-    { pct: 30, text: '骑手已到店，等待取餐...' },
-    { pct: 45, text: '骑手已取餐，正在配送路上...' },
-    { pct: 65, text: '骑手已进入配送范围，请留意手机...' },
-    { pct: 85, text: '骑手已到楼下，马上就到！' },
-    { pct: 95, text: '叮！请开门取餐~' },
-    { pct: 100, text: '🧾 外卖已送达！祝您用餐愉快~' },
+    { pct: 5, text: '📋 订单已提交，等待商家接单...' },
+    { pct: 15, text: '👨‍🍳 商家已接单，正在备餐...' },
+    { pct: 25, text: '🔥 厨房忙得热火朝天，请耐心等待...' },
+    { pct: 35, text: '📦 餐已备好，等待骑手取餐...' },
+    { pct: 45, text: '🛵 骑手已取餐，出发配送中...' },
+    { pct: 60, text: '🗺️ 骑手正在路上，离你越来越近...' },
+    { pct: 75, text: '📍 骑手已到达附近，请留意手机...' },
+    { pct: 88, text: '🏃 骑手已到楼下，马上就到！' },
+    { pct: 96, text: '🔔 叮！请开门取餐~' },
+    { pct: 100, text: '✨ 外卖已送达！祝您用餐愉快~（本单消费 ¥0）' },
   ];
   let stepIdx = 0;
 
   // 进度更新
   function updateDelivery() {
+    if (finished) return;
     const elapsed = Date.now() - startTime;
     let pct = Math.min(100, (elapsed / TOTAL_TIME) * 100);
 
-    // 根据进度更新状态文字
     while (stepIdx < statusSteps.length - 1 && pct >= statusSteps[stepIdx + 1].pct) {
       stepIdx++;
     }
+
+    // 更新弹窗内的进度（无关是否最小化）
     progress.style.width = pct + '%';
     status.textContent = statusSteps[stepIdx].text;
-
-    // 更新倒计时
-    const remaining = Math.max(0, Math.ceil((TOTAL_TIME - elapsed) / 60000 * 60));
+    const remaining = Math.max(0, Math.ceil((TOTAL_TIME - elapsed) / 1000));
     const min = Math.floor(remaining / 60);
     const sec = remaining % 60;
-    timerEl.textContent = '预计 ' + min + ' 分 ' + (sec < 10 ? '0' : '') + sec + ' 秒后送达';
+    timerEl.textContent = '⏱ 预计 ' + min + ' 分 ' + (sec < 10 ? '0' : '') + sec + ' 秒后送达';
+
+    // 更新浮动进度条
+    floatingProgress.style.width = pct + '%';
+    floatingStatus.textContent = statusSteps[stepIdx].text;
+    floatingTime.textContent = '约' + min + '分' + (sec < 10 ? '0' : '') + sec + '秒';
 
     if (pct >= 100) {
       finishDelivery();
@@ -928,22 +999,30 @@ function startCheckout() {
     deliveryTimer = setTimeout(updateDelivery, 2000);
   }
 
-  // 随机事件 —— 只有30%概率触发，整趟配送最多触发一次
-  let eventTriggered = false;
-  const hasRandomEvent = Math.random() < 0.3; // 30%概率有随机事件
+  // 随机事件：45%概率触发，最多2次
+  let eventCount = 0;
+  const maxEvents = Math.random() < 0.45 ? (Math.random() < 0.5 ? 1 : 2) : 0;
 
   function maybeTriggerRandomEvent() {
-    if (finished || eventTriggered || !hasRandomEvent) return;
+    if (finished) return;
+    if (eventCount >= maxEvents) return;
     const step = statusSteps[stepIdx];
-    if (step.pct < 30 || step.pct >= 85) return; // 太早或太晚都不出
+    if (step.pct < 30 || step.pct >= 88) return;
 
-    eventTriggered = true;
+    eventCount++;
     const event = randomEvents[Math.floor(Math.random() * randomEvents.length)];
-    status.textContent = event.text;
-    // 5秒后恢复正常
+    // 更新弹窗和浮动条的状态
+    status.textContent = event;
+    floatingStatus.textContent = event;
+    // 延长总时间模拟延迟效果（随机加30-120秒）
+    const delay = 30000 + Math.random() * 90000;
+    // 重新写一个延长变量（简化处理：让下次检查拉长间隔）
     setTimeout(() => {
-      if (!finished) status.textContent = statusSteps[stepIdx].text;
-    }, 5000);
+      if (!finished) {
+        status.textContent = statusSteps[stepIdx].text;
+        floatingStatus.textContent = statusSteps[stepIdx].text;
+      }
+    }, 10000);
   }
 
   function finishDelivery() {
@@ -951,23 +1030,50 @@ function startCheckout() {
     clearTimeout(deliveryTimer);
     clearInterval(eventTimer);
     progress.style.width = '100%';
-    status.textContent = '🧾 外卖已送达！祝您用餐愉快~';
-    timerEl.textContent = '您的"外卖"已送达';
+    status.textContent = '✨ 外卖已送达！祝您用餐愉快~（本单消费 ¥0）';
+    timerEl.textContent = '您的"外卖"已送达 🎉';
+    floatingProgress.style.width = '100%';
+    floatingStatus.textContent = '✨ 外卖已送达！';
+    floatingTime.textContent = '点击查看详情';
+
     closeBtn.classList.add('show');
+    if (minimized) {
+      overlay.classList.remove('show');
+      showToast('🎉 你的外卖到了！');
+      setTimeout(() => showSuccess(), 1500);
+    }
   }
 
   function skipDelivery() {
     finishDelivery();
   }
 
+  // 最小化：关掉弹窗，保留浮动条继续逛
+  window.minimizeDelivery = function() {
+    minimized = true;
+    overlay.classList.remove('show');
+    floating.classList.add('show');
+    showToast('🛵 骑手继续配送中，你可继续逛~');
+  };
+
+  // 恢复弹窗
+  window.restoreDelivery = function() {
+    minimized = false;
+    floating.classList.remove('show');
+    overlay.classList.add('show');
+  };
+
   // 开始
-  timerEl.textContent = '预计 2 分 30 秒后送达';
+  timerEl.textContent = '⏱ 预计配送中...';
   status.textContent = statusSteps[0].text;
   progress.style.width = '0%';
+  floatingProgress.style.width = '0%';
+  floatingStatus.textContent = statusSteps[0].text;
+  floatingTime.textContent = '配送中...';
   deliveryTimer = setTimeout(updateDelivery, 500);
 
-  // 每15秒检查一次是否有机会触发随机事件
-  eventTimer = setInterval(maybeTriggerRandomEvent, 15000);
+  // 每20秒检查随机事件
+  eventTimer = setInterval(maybeTriggerRandomEvent, 20000);
 
   // 点击蒙层可以跳过
   overlay.onclick = function(e) {
