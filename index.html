@@ -568,7 +568,7 @@
 </div>
 
 <div class="toast" id="toast"></div>
-<div style="text-align:center;padding:20px 0 160px;font-size:11px;color:#ccc;">v1.3 · 假装点外卖 · 不花钱不长胖</div>
+<div style="text-align:center;padding:20px 0 160px;font-size:11px;color:#ccc;">v1.4 · 假装点外卖 · 不花钱不长胖</div>
 
 <script>
 let currentCategory = '全部';
@@ -680,10 +680,16 @@ function getFilteredRestaurants() {
     });
   } else if (currentSort === 'popular') {
     const clicks = getClickData();
+    const totalClicks = Object.values(clicks).reduce((s, c) => s + c, 0);
+    if (totalClicks === 0) {
+      showToast('😋 你还没点过菜呢，先逛逛吧~');
+    }
     list = [...list].sort((a, b) => {
       const ca = a.dishes.reduce((s, d) => s + (clicks[a.id + '-' + d.name] || 0), 0);
       const cb = b.dishes.reduce((s, d) => s + (clicks[b.id + '-' + d.name] || 0), 0);
-      return cb - ca;
+      if (ca !== cb) return cb - ca;
+      // 点击相同按评分排
+      return b.rating - a.rating;
     });
   }
   return list;
