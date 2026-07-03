@@ -568,7 +568,7 @@
 </div>
 
 <div class="toast" id="toast"></div>
-<div style="text-align:center;padding:20px 0 160px;font-size:11px;color:#ccc;">v1.4 · 假装点外卖 · 不花钱不长胖</div>
+<div style="text-align:center;padding:20px 0 160px;font-size:11px;color:#ccc;">v1.6 · 假装点外卖 · 不花钱不长胖</div>
 
 <script>
 let currentCategory = '全部';
@@ -955,6 +955,12 @@ function startCheckout() {
   minimizeBtn.classList.add('show'); progress.style.width = '0%';
   floating.classList.remove('show');
 
+  // 记录本单价格
+  const orderPrice = getCartTotal() + getDeliveryFee() - getDiscount();
+
+  // 结算后自动清空购物车，用户可以马上点下一单
+  clearCart();
+
   // 每家餐厅配送时间不同，在4-6分钟之间随机
   const TOTAL_TIME = 240000 + Math.random() * 120000; // 4-6分钟
 
@@ -998,7 +1004,7 @@ function startCheckout() {
     { pct: 75, text: '📍 骑手已到达附近，请留意手机...' },
     { pct: 88, text: '🏃 骑手已到楼下，马上就到！' },
     { pct: 96, text: '🔔 叮！请开门取餐~' },
-    { pct: 100, text: '✨ 外卖已送达！祝您用餐愉快~（本单消费 ¥0）' },
+    { pct: 100, text: '✨ 外卖已送达！祝您用餐愉快~（本单消费 ¥' + orderPrice.toFixed(1) + '）' },
   ];
   let stepIdx = 0;
 
@@ -1034,7 +1040,7 @@ function startCheckout() {
 
   // 随机事件：45%概率触发，最多2次
   let eventCount = 0;
-  const maxEvents = Math.random() < 0.45 ? (Math.random() < 0.5 ? 1 : 2) : 0;
+  const maxEvents = Math.random() < 0.6 ? (Math.random() < 0.5 ? 1 : 2) : 0;
 
   function maybeTriggerRandomEvent() {
     if (finished) return;
@@ -1063,16 +1069,16 @@ function startCheckout() {
     clearTimeout(deliveryTimer);
     clearInterval(eventTimer);
     progress.style.width = '100%';
-    status.textContent = '✨ 外卖已送达！祝您用餐愉快~（本单消费 ¥0）';
+    status.textContent = '✨ 外卖已送达！祝您用餐愉快~（本单消费 ¥' + orderPrice.toFixed(1) + '）';
     timerEl.textContent = '您的"外卖"已送达 🎉';
     floatingProgress.style.width = '100%';
-    floatingStatus.textContent = '✨ 外卖已送达！';
-    floatingTime.textContent = '点击查看详情';
+    floatingStatus.textContent = '✨ 外卖已送达！点击查看详情';
+    floatingTime.textContent = '¥' + orderPrice.toFixed(1);
 
     closeBtn.classList.add('show');
     if (minimized) {
       overlay.classList.remove('show');
-      showToast('🎉 你的外卖到了！');
+      showToast('🎉 你的外卖到了！（¥' + orderPrice.toFixed(1) + '）');
       setTimeout(() => showSuccess(), 1500);
     }
   }
@@ -1091,9 +1097,13 @@ function startCheckout() {
 
   // 恢复弹窗
   window.restoreDelivery = function() {
+    if (finished) return;
     minimized = false;
     floating.classList.remove('show');
     overlay.classList.add('show');
+    // 立即刷新进度，避免视觉跳变
+    clearTimeout(deliveryTimer);
+    updateDelivery();
   };
 
   // 开始
@@ -1106,7 +1116,7 @@ function startCheckout() {
   deliveryTimer = setTimeout(updateDelivery, 500);
 
   // 每20秒检查随机事件
-  eventTimer = setInterval(maybeTriggerRandomEvent, 20000);
+  eventTimer = setInterval(maybeTriggerRandomEvent, 12000);
 
   // 点击蒙层可以跳过
   overlay.onclick = function(e) {
