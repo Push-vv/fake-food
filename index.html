@@ -589,7 +589,7 @@
 </div>
 
 <div class="toast" id="toast"></div>
-<div style="text-align:center;padding:20px 0 160px;font-size:11px;color:#ccc;">v2.1 · 假装点外卖 · 不花钱不长胖</div>
+<div style="text-align:center;padding:20px 0 160px;font-size:11px;color:#ccc;">v2.2 · 假装点外卖 · 不花钱不长胖</div>
 
 <script>
 let currentCategory = '全部';
@@ -1006,13 +1006,24 @@ function getRestaurantCartTotal(restaurantId) { return getCartItems().filter(ite
 function getDiscount() { const total = getCartTotal(); const rule = DISCOUNT_RULES.find(r => total >= r.min); return rule ? rule.amount : 0; }
 function getDeliveryFee() { const items = getCartItems(); if (items.length === 0) return 0; const firstRestaurant = allData.restaurants.find(r => r.id == items[0].restaurantId); return firstRestaurant ? firstRestaurant.deliveryFee : 0; }
 
+function getPackingFee() { return getCartItems().length * 2; } // 每种菜品¥2打包费
+function getMinOrderPrice() {
+  const items = getCartItems();
+  if (items.length === 0) return 0;
+  const rid = items[0].restaurantId;
+  const r = allData.restaurants.find(r => r.id == rid);
+  return r ? r.minPrice : 0;
+}
+
 function updateCartUI() {
   const items = getCartItems();
   const count = getCartCount();
   const total = getCartTotal();
   const discount = getDiscount();
   const deliveryFee = getDeliveryFee();
-  const finalTotal = total + deliveryFee - discount;
+  const packingFee = getPackingFee();
+  const finalTotal = total + deliveryFee + packingFee - discount;
+  const minPrice = getMinOrderPrice();
   const badge = document.getElementById('cartBadge');
   const headerBadge = document.getElementById('headerBadge');
   const iconWrap = document.getElementById('cartIconWrap');
@@ -1026,16 +1037,24 @@ function updateCartUI() {
   }
   document.getElementById('cartTotal').textContent = finalTotal > 0 ? finalTotal.toFixed(1) : '0';
   const tip = document.getElementById('cartTip');
-  if (count === 0) { tip.innerHTML = '另需配送费 ¥0'; }
-  else {
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  if (count === 0) {
+    tip.innerHTML = '配送费+打包费按实际收取';
+    checkoutBtn.disabled = true; checkoutBtn.textContent = '去结算';
+  } else {
     const nextRule = DISCOUNT_RULES.slice().reverse().find(r => total < r.min);
     if (nextRule) tip.innerHTML = `再买 <span class="highlight">¥${(nextRule.min - total).toFixed(1)}</span> 减 <span class="highlight">¥${nextRule.amount}</span>`;
-    else if (discount > 0) tip.innerHTML = `已减 <span class="highlight">¥${discount}</span>，再买更优惠`;
-    else tip.innerHTML = `配送费 ¥${deliveryFee}`;
+    else if (discount > 0) tip.innerHTML = `已减 <span class="highlight">¥${discount}</span> · 配送¥${deliveryFee} · 打包¥${packingFee}`;
+    else tip.innerHTML = `配送费 ¥${deliveryFee} · 打包费 ¥${packingFee}`;
+
+    // 检查起送价
+    if (total < minPrice) {
+      tip.innerHTML = `⚠️ 还差 <span class="highlight">¥${(minPrice - total).toFixed(1)}</span> 起送（起送¥${minPrice}）`;
+      checkoutBtn.disabled = true; checkoutBtn.textContent = `差¥${(minPrice - total).toFixed(1)}起送`;
+    } else {
+      checkoutBtn.disabled = false; checkoutBtn.textContent = `去结算 ¥${finalTotal.toFixed(1)}`;
+    }
   }
-  const checkoutBtn = document.getElementById('checkoutBtn');
-  if (count === 0) { checkoutBtn.disabled = true; checkoutBtn.textContent = '去结算'; }
-  else { checkoutBtn.disabled = false; checkoutBtn.textContent = `去结算 ¥${finalTotal.toFixed(1)}`; }
   renderCartModal();
 }
 
@@ -1081,7 +1100,9 @@ function startCheckout() {
   floating.classList.remove('show');
 
   // 记录本单价格
-  const orderPrice = getCartTotal() + getDeliveryFee() - getDiscount();
+  const orderPrice = getCartTotal() + getDeliveryFee() + getPackingFee() - getDiscount();
+  const orderDeliveryFee = getDeliveryFee();
+  const orderPackingFee = getPackingFee();
 
   // 保存订单到历史
   const cartItems = getCartItems();
@@ -1092,6 +1113,8 @@ function startCheckout() {
     restaurant: restaurantName,
     items: cartItems.map(it => ({ name: it.dish.name, price: it.dish.price, qty: it.qty })),
     total: orderPrice,
+    deliveryFee: orderDeliveryFee,
+    packingFee: orderPackingFee,
     time: now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0'),
     date: now.getMonth()+1 + '/' + now.getDate(),
     month: now.getFullYear() + '-' + (now.getMonth()+1),
@@ -1275,8 +1298,8 @@ function showSuccess() {
   const itemsTotal = order.items.reduce((s, it) => s + it.price * it.qty, 0);
   document.getElementById('orderId').textContent = order.orderId;
   document.getElementById('successSubtotal').textContent = '¥' + itemsTotal.toFixed(1);
-  document.getElementById('successDelivery').textContent = '¥0';
-  document.getElementById('successDiscount').textContent = '-¥' + Math.max(0, itemsTotal - final).toFixed(1);
+  document.getElementById('successDelivery').textContent = '¥' + (order.deliveryFee || 0).toFixed(1);
+  document.getElementById('successDiscount').textContent = '-¥' + Math.max(0, itemsTotal + (order.packingFee||0) + (order.deliveryFee||0) - final).toFixed(1);
   document.getElementById('successTotal').textContent = '¥' + final.toFixed(1);
   document.getElementById('successOverlay').classList.add('show');
   // 隐藏统计和历史弹窗
